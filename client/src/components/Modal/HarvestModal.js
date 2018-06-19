@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';
-import './harvest.css'
+// import './harvest.css'
 
 class HarvestModal extends React.Component {
   constructor(props) {
