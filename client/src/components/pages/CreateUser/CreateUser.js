@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {Col, Row, Container } from "reactstrap"
-import API from "../../utils/API";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
+// import API from "../../utils/API.js";
+// import { Link } from "react-router-dom";
+// import { Col, Row, Container } from "../../components/Grid";
 
 
 class CreateUser extends Component {

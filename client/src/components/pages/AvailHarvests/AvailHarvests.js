@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import {Col, Row, Container } from "reactstrap"
-import API from "../../utils/API";
+import {Col, Row, Container } from "reactstrap";
+// import API from "../../../utils/API";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
-import HarvestModal from "./components/Modal/HarvestModal";
-import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';
+// import { Col, Row, Container } from "../../components/Grid";
+import HarvestModal from "../../Modal/HarvestModal";
+// import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';
 
 
 class AvailHarvests extends Component {

@@ -1,3 +1,16 @@
+import axios from "axios";
+
+export default {
+    //gets all crops
+    getCrops: () => {
+        return axios.get("/api/availharvests");
+    },
+    //deletes crops (to be called in a delete button)
+    deleteCrops: () => {
+        return axios.delete("/api/availHarvests" + id);
+    }
+};
+
 // import axios from "axios";
 
 // export default {
