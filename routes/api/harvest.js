@@ -21,3 +21,10 @@ router
   .delete(harvestController.remove);
 
 module.exports = router;
+
+
+// needs crops by a user
+
+// available harvests - all crops set to true
+
+// 
