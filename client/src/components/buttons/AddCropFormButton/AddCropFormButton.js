@@ -4,7 +4,7 @@ import "./AddCropFormButton.css"
 
 const AddCropFormButton = () => (
 
-        <Button>
+        <Button className="acfb" type="submit">
            <h1> Add a Crop </h1>
         </Button>
 
