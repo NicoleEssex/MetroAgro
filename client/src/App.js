@@ -4,16 +4,16 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AvailHarvests from "./components/pages/AvailHarvests";
 import Home from "./components/pages/Home";
 import Landing from "./components/pages/Landing";
-import MyBounty from "./components/pages/Home";
+import MyBounty from "./components/pages/MyBounty";
 import CreateUser from "./components/pages/CreateUser";
 import HarvestModal from "./components/Modal/HarvestModal";
 import {Container} from "reactstrap";
+import "./App.css";
 
 const App = () => (
   
-  <Container fluid>
   <Router>
-
+  
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Home} />
@@ -23,8 +23,6 @@ const App = () => (
       </Switch>
 
   </Router>
-  </Container>
-
 
 );
 

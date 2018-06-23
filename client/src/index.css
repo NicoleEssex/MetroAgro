@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color:#ced2bc;
+}
+
 :root {
     --palette1-a: #67ab23;
     --palette1-b:#93de89;
