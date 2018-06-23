@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import {Container, Row, Col,} from "reactstrap";
 import HomeButton from "../../buttons/HomeButton/";
-import AddCropModal from "../../Modal/AddCropModal"
+import HarvestModal from "../../Modal/HarvestModal";
+
 
 // import DeleteBtn from "../../components/DeleteBtn";
 
@@ -24,7 +25,7 @@ class MyBounty extends Component {
                 </Row>
                 <Row>
                     <Col>
-                        <AddCropModal />
+                    <HarvestModal /> 
                     </Col>
                 </Row>
                 <Row>
