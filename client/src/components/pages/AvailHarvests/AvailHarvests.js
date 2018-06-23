@@ -22,7 +22,7 @@ class AvailHarvests extends Component {
                 </Row>
             <Row>
                 <Col>
-                {/* <HarvestModal />  */}
+                
                 </Col>
             </Row>
             <Row>
