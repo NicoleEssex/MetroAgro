@@ -1,8 +1,10 @@
 import { Modal, Button } from "react-bootstrap";
 import { Container, Row, Col } from "reactstrap";
 import AddCropFormButton from "../buttons/AddCropFormButton";
+import AddCropForm from "../AddCropForm/AddCropForm";
+import React from "react"; 
 
-class Example extends React.Component {
+class AddCropModal extends React.Component {
     constructor(props, context) {
         super(props, context);
 
@@ -30,10 +32,10 @@ class Example extends React.Component {
                         <AddCropFormButton onClick={this.handleShow} />
                         <Modal show={this.state.show} onHide={this.handleClose}>
                             <Modal.Header closeButton>
-                                <Modal.Title>Modal heading</Modal.Title>
+                                <Modal.Title>Add your crop information</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
-                                
+                                <AddCropForm /> 
                                 </Modal.Body>
                         </Modal>
                     </Col>
@@ -42,4 +44,6 @@ class Example extends React.Component {
         )
     }
 }
+
+export default AddCropModal;
 
