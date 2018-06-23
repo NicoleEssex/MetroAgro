@@ -7,7 +7,8 @@ import Landing from "./components/pages/Landing";
 import MyBounty from "./components/pages/MyBounty";
 import CreateUser from "./components/pages/CreateUser";
 import HarvestModal from "./components/Modal/HarvestModal";
-import { Container } from "reactstrap";
+import {Container} from "reactstrap";
+import "./App.css";
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
@@ -54,6 +55,7 @@ changeAppState = (name, value) => {
     );
   }
 }
+
 
 
 export default App;
