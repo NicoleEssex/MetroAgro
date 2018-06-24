@@ -1,10 +1,7 @@
 import React from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';
-import AddCropFormButton from "../buttons/AddCropFormButton";
-import "./HarvestModal.css"
 import "./Modal.css"
 // import './harvest.css'
-
 
 class HarvestModal extends React.Component {
   constructor(props) {
