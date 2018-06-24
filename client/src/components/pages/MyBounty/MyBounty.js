@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-import {UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Jumbotron, Container, Row, Col,FormGroup, Label, Input} from "reactstrap";
-import WebFont from "webfontloader";
+import {Container, Row, Col,} from "reactstrap";
 import HomeButton from "../../buttons/HomeButton/";
 import HarvestModal from "../../Modal/HarvestModal";
-import AddCropFormButton from "../../buttons/AddCropFormButton";
-import "./MyBounty.css"
-
-WebFont.load({
-    google: {
-        families: ['Indie Flower', 'cursive', 'Roboto Condensed', 'sans-serif']
-    }
-  })
+import DummyModal from "../../Modal/DummyModal";
+import AddCropModal from "../../Modal/AddCropModal"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class MyBounty extends Component {
 
@@ -51,6 +45,7 @@ class MyBounty extends Component {
                 </div>
             </FormGroup>
           </div>
+
         );
     }
 }

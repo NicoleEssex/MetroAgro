@@ -13,7 +13,7 @@ opacity: 50%;
     text-align: center;
     padding: 10px;
     margin: 10px auto;
-    font-family: 'Indie Flower', 'cursive';
+    font-family: 'Indie Flower', cursive;
     font-size: 40pt;
 }
 
@@ -40,6 +40,24 @@ div .image-container {
     padding: 10px;
     position: relative;
 
+}
+.pageContainer {
+    text-align: center;
+}
+div {
+    padding: 50px;
+    text-align: center;
+}
+.MyBountyButton {
+    height: 100px;
+    width: 200px;
+    text-align: center;
+}
+row {
+    text-align: center;
+}
+col {
+    text-align: center;
 }
 
 .image-title {
