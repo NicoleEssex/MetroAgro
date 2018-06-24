@@ -7,13 +7,14 @@ import Landing from "./components/pages/Landing";
 import MyBounty from "./components/pages/MyBounty";
 import CreateUser from "./components/pages/CreateUser";
 import HarvestModal from "./components/Modal/HarvestModal";
-import {Container} from "reactstrap";
+import { Container } from "reactstrap";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => (
-  
-  <Container fluid>
-  <Router>
 
+  <Router>
+    <div>
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Home} />
@@ -21,9 +22,9 @@ const App = () => (
         <Route exact path="/availharvests" component={AvailHarvests} />
         <Route exact path="/createuser" component={CreateUser} />
       </Switch>
-
+    </div>
   </Router>
-  </Container>
+
 
 
 );

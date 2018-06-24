@@ -1,6 +1,21 @@
 body {
     text-align: center;
 }
+.pageContainer {
+    text-align: center;
+}
 div {
     padding: 50px;
+    text-align: center;
+}
+.MyBountyButton {
+    height: 100px;
+    width: 200px;
+    text-align: center;
+}
+row {
+    text-align: center;
+}
+col {
+    text-align: center;
 }
