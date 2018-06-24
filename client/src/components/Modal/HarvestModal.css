@@ -1,0 +1,8 @@
+div .modal-content {
+    display: block;
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+    z-index: 1000;
+    
+}

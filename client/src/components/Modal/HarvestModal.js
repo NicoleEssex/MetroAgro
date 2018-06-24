@@ -1,13 +1,14 @@
 import React from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';
-import AddCropFormButton from "../buttons/AddCropFormButton"
-// import './harvest.css'
+import AddCropFormButton from "../buttons/AddCropFormButton";
+import "./HarvestModal.css"
+ 
 
 class HarvestModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: true
+      modal: false
     };
 
     this.toggle = this.toggle.bind(this);
@@ -22,7 +23,7 @@ class HarvestModal extends React.Component {
   render() {
     return (
       <div className="modal-group">
-        <AddCropFormButton />
+        
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Harvest Info</ModalHeader>
           <ModalBody>
