@@ -106,6 +106,7 @@ class MyBounty extends Component {
              </Container> */}
              
              </div>
+                
         );
     }
 }

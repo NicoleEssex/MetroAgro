@@ -2,7 +2,9 @@ import React from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';
 import AddCropFormButton from "../buttons/AddCropFormButton";
 import "./HarvestModal.css"
- 
+import "./Modal.css"
+// import './harvest.css'
+
 
 class HarvestModal extends React.Component {
   constructor(props) {
@@ -23,7 +25,7 @@ class HarvestModal extends React.Component {
   render() {
     return (
       <div className="modal-group">
-        
+       <Button color="danger" onClick={this.toggle}>Add A Crop</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Harvest Info</ModalHeader>
           <ModalBody>
@@ -54,7 +56,8 @@ class HarvestModal extends React.Component {
           <ModalFooter>
             <Button className="submit-button" onClick={this.toggle}>Submit Harvest</Button>{' '}
             <Button className="cancel-button" onClick={this.toggle}>Cancel</Button>
-          </ModalFooter>        
+          </ModalFooter>    
+          <div className="clearboth"></div>    
         </Modal>
       
      </div> 
