@@ -48,7 +48,6 @@ changeAppState = (name, value) => {
             <Route exact path="/mybounty" component={MyBounty} />
             <Route exact path="/availharvests" component={AvailHarvests} />
             <Route exact path="/createuser" component={CreateUser} />
-            <Route exact path="/harvestmodal" component={HarvestModal}/>
           </Switch>
 
         </Router>
