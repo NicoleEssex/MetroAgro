@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import {Container, Row, Col,} from "reactstrap";
 import HomeButton from "../../buttons/HomeButton/";
 import HarvestModal from "../../Modal/HarvestModal";
-import DummyModal from "../../Modal/DummyModal";
-import AddCropModal from "../../Modal/AddCropModal"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import AddCropFormButton from "../../buttons/AddCropFormButton";
+import "./MyBounty.css"
+
+WebFont.load({
+    google: {
+        families: ['Indie Flower', 'cursive', 'Roboto Condensed', 'sans-serif']
+    }
+  })
+
 
 class MyBounty extends Component {
 
