@@ -39,7 +39,8 @@ changeAppState = (name, value) => {
 }
   render() {
     return (
-      <Container fluid>
+      
+      <div>
         <Router  history={history}>
 
           <Switch>
@@ -51,8 +52,7 @@ changeAppState = (name, value) => {
           </Switch>
 
         </Router>
-        
-      </Container>
+        </div>
     );
   }
 }
