@@ -16,7 +16,7 @@ WebFont.load({
   export default class Home extends React.Component {
     render() {
       return (
-        <Container float className="homebkg">
+        <Container className="homebkg">
           <Row>
             <Col className="app-title"><h1>AgraLove</h1></Col>
           </Row>

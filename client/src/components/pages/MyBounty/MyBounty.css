@@ -1,0 +1,60 @@
+
+
+.myBountyContainer {
+    padding: 20px;
+    background-color: #d2cfa6;
+    opacity: .9;
+    max-width: 500px;
+    text-align: center;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:20px;   
+}
+
+.mbFormGroup {
+    background-color: #6c4967;
+    opacity: .9;
+    font-family:'Roboto Condensed', 'sans-serif';
+    color:white;
+    max-width: 500px;
+    margin-right:auto;
+    margin-left:auto;
+    padding:10px;
+}
+
+ #myBountyTitle {
+    margin: auto 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-weight: 100;
+    color: #6c4967;
+    font-family: 'Indie Flower', 'cursive';
+    font-size: 40px;
+}
+
+div .popdbinfo{
+    height: auto;
+    width: auto;
+    background-color: #67ab23;   
+}
+
+ #mb-main-container {
+    background-image: url(vegbask2\ copy.jpg);  
+}
+
+.form-check-label {
+    margin-right: 12px;
+    font-size: 16px;
+    padding-right: 5px;
+    
+}
+
+
+#checkAvail {
+    margin-left:10px;
+}
+
+.acfb {
+    margin:0px;
+    padding:0px;
+}

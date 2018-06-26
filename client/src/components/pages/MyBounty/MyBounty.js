@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import {Container, Row, Col,} from "reactstrap";
+import {UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Jumbotron, Container, Row, Col,FormGroup, Label, Input} from "reactstrap";
+import WebFont from "webfontloader";
 import HomeButton from "../../buttons/HomeButton/";
 import HarvestModal from "../../Modal/HarvestModal";
 import AddCropFormButton from "../../buttons/AddCropFormButton";
@@ -10,7 +11,6 @@ WebFont.load({
         families: ['Indie Flower', 'cursive', 'Roboto Condensed', 'sans-serif']
     }
   })
-
 
 class MyBounty extends Component {
 
@@ -41,17 +41,16 @@ class MyBounty extends Component {
                 <span>Until<Input type="time" name="time" id="exampleTime" placeholder="time available" /></span>
                 <Label for="exampleText">Additional Comments</Label>
                 <Input type="textarea" name="text" id="exampleText" />
-                <div className ="box-label-group">
+            
                 <br/>
-                <span><Label check>
+                <Label check>
                 <Input type="checkbox" />{' '}
                   Ready for Available Harvests
-                </Label></span>
-                <span><AddCropFormButton /></span>
-                </div>
+                </Label>
+                <AddCropFormButton />
+                
             </FormGroup>
           </div>
-
         );
     }
 }
