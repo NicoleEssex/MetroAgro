@@ -82,36 +82,38 @@ class MyBounty extends Component {
               <h3>No Results to Display</h3>
             )}
                 </div>
-                </Jumbotron>
-
-                <FormGroup className="mbFormGroup">
-                    <Label for="exampleSelect">Category of Harvest</Label>
-                    <Input type="select" name="select" id="exampleSelect">
-                        <option>Select One</option>
-                        <option>Fruit</option>
-                        <option>Vegetable</option>
-                        <option>Herbs</option>
-                    </Input>
-                    <Label for="exampleDate">Date</Label>
-                    <Input type="date" name="date" id="exampleDate" placeholder="date available" />
-                    <Label for="exampleTime">Time Available for Drop-by</Label>
-                    <span><Input type="time" name="time" id="exampleTime" placeholder="time available" /></span>
-                    <span>Until<Input type="time" name="time" id="exampleTime" placeholder="time available" /></span>
-                    <Label for="exampleText">Additional Comments</Label>
-                    <Input type="textarea" name="text" id="exampleText" />
-
-                    <br />
-                    <Label check>
-                        <Input type="checkbox" />{' '}
-                        Ready for Available Harvests
+            </Jumbotron>
+ 
+            <FormGroup className="mbFormGroup">
+                <Label  for="exampleSelect">Category of Harvest</Label>
+                <Input type="select"    name="select"  id="exampleSelect">
+                    <option>Select One</option>
+                    <option>Fruit</option>
+                    <option>Vegetable</option>
+                    <option>Herbs</option>
+                </Input>
+                <Label for="exampleDate">Date</Label>
+                <Input type="date" name="date" id="exampleDate" placeholder="date available" />
+                <Label for="exampleTime">Time Available for Drop-by</Label>
+                <span><Input type="time" name="time" id="exampleTime" placeholder="time available"  /></span>
+                <span>Until<Input type="time" name="time" id="exampleTime" placeholder="time available" /></span>
+                <Label for="exampleText">Additional Comments</Label>
+                <Input type="textarea" name="text" id="exampleText" />
+                <div className ="box-label-group">
+                <br/>
+                <Label check>
+                <Input type="checkbox" id="checkbox"/>{' '}
+               
                 </Label>
-                    <AddCropFormButton
+                <span id="ready">Ready for Available Harvest</span>
+                <span><AddCropFormButton 
                         disabled={!(this.state.crop)}
-                        onClick={this.handleFormSubmit}
-                    />
+                        onClick={this.handleFormSubmit}/>
+                  </span>
+                </div>
+            </FormGroup>
+          </div>
 
-                </FormGroup>
-            </div>
         );
     }
 }
