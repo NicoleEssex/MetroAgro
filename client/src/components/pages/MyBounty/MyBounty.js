@@ -41,14 +41,15 @@ class MyBounty extends Component {
                 <span>Until<Input type="time" name="time" id="exampleTime" placeholder="time available" /></span>
                 <Label for="exampleText">Additional Comments</Label>
                 <Input type="textarea" name="text" id="exampleText" />
-            
+                <div className ="box-label-group">
                 <br/>
                 <Label check>
-                <Input type="checkbox" />{' '}
-                  Ready for Available Harvests
+                <Input type="checkbox" id="checkbox"/>{' '}
+               
                 </Label>
-                <AddCropFormButton />
-                
+                <span id="ready">Ready for Available Harvest</span>
+                <span><AddCropFormButton /></span>
+                </div>
             </FormGroup>
           </div>
         );
