@@ -3,13 +3,17 @@ import axios from "axios";
 export default {
     //gets all crops
     getCrops: () => {
-        return axios.get("/api/availharvests");
+        return axios.get("/api/Harvest");
     },
-    //deletes crops (to be called in a delete button)
-    deleteCrops: () => {
-        return axios.delete("/api/availHarvests" + id);
-    }
-};
+    //deletes crops (to be called in a delete button) little red "x" maybe? 
+    deleteCrops: (id) => {
+        return axios.delete("/api/Harvest" + id);
+    },
+    saveCrop: function(cropData) {
+        return axios.post("/api/Harvest", cropData);
+      }
+    };
+
 
 // import axios from "axios";
 
