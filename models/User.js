@@ -1,11 +1,12 @@
-import { isEmail } from 'validator'
+// import { isEmail } from 'validator'
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   first_name: { type: String, required: true },
   last_name: { type: String, required: true },
-  email: {type: String, required: true, validate: [isEmail, "invalid email"]},
+  email: {type: String, required: true}, 
+    // validate: [isEmail, "invalid email"]},
   password: {type: String, required: true},
   phone: {type: String, required: [true, "Please enter a valid phone number to register"], validate: {
     validator: (v) => {
