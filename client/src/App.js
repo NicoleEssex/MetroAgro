@@ -5,9 +5,11 @@ import AvailHarvests from "./components/pages/AvailHarvests";
 import Home from "./components/pages/Home";
 import Landing from "./components/pages/Landing";
 import MyBounty from "./components/pages/Home";
+import sandboxMelinda from "./components/sandboxMelinda";
 import CreateUser from "./components/pages/CreateUser";
 import HarvestModal from "./components/Modal/HarvestModal";
 import {Container} from "reactstrap";
+import "./components/sandboxMelinda/sandbox.css";
 
 const App = () => (
   
@@ -18,6 +20,7 @@ const App = () => (
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/mybounty" component={MyBounty} />
+				<Route exact path="/sandboxMelinda" component={sandboxMelinda} />
         <Route exact path="/availharvests" component={AvailHarvests} />
         <Route exact path="/createuser" component={CreateUser} />
       </Switch>
