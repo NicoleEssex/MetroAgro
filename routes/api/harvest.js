@@ -2,9 +2,10 @@ const router = require("express").Router();
 const harvestController = require("../../controllers/harvestController");
 
 // Matches with "/api/harvest"
-router.route("/")
+router.route("/api/harvest")
   .get(harvestController.findAll)
-  .post(harvestController.create);
+  .post(harvestController.create)
+  .delete(harvestController.delete);
 
 // Matches with "/api/harvest/:id"
 router
@@ -21,3 +22,10 @@ router
   .delete(harvestController.remove);
 
 module.exports = router;
+
+
+// needs crops by a user
+
+// available harvests - all crops set to true
+
+// 

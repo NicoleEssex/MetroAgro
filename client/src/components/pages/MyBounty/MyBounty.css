@@ -1,0 +1,77 @@
+
+
+.myBountyContainer {
+    padding: 20px;
+    background-color: #d2cfa6;
+    opacity: .9;
+    max-width: 500px;
+    text-align: center;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:20px;   
+}
+
+.mbFormGroup {
+    background-color: #6c4967;
+    opacity: .9;
+    font-family:'Roboto Condensed', 'sans-serif';
+    color:white;
+    max-width: 500px;
+    margin-right:auto;
+    margin-left:auto;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom:10px;
+
+}
+
+ #myBountyTitle {
+    margin: auto 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-weight: 100;
+    color: #6c4967;
+    font-family: 'Indie Flower', 'cursive';
+    font-size: 40px;
+}
+
+div .popdbinfo{
+    height: auto;
+    width: auto;
+    background-color: #67ab23;   
+}
+
+ #mb-main-container {
+    background-image: url(vegbask2\ copy.jpg);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 600px;
+    height: 400%;
+    margin-top: 20px;
+
+}
+
+.form-check-label {
+    margin-right: 12px;
+    font-size: 23px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+/* input.form-check-input {
+    padding-bottom: 50px;
+} */
+
+#ready {
+    margin-left: 10px;
+    padding: 0px;
+    margin-top: 10px;   
+}
+
+#checkbox {
+    margin-bottom:50px;
+    position: absolute;
+    top: -13px;
+}
+
