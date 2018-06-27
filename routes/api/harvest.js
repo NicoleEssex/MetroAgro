@@ -17,7 +17,7 @@ router
 //Matches with "api/harvest/:item"
 router 
   .route("/:item")
-  .get(harvestController.findbyItem)
+  .get(harvestController.findByItem)
   .put(harvestController.update)
   .delete(harvestController.remove);
 
