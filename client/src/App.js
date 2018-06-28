@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
 // import { Col, Row, Container } from "../src/components/grid";
 import AvailHarvests from "./components/pages/AvailHarvests";
 import Home from "./components/pages/Home";

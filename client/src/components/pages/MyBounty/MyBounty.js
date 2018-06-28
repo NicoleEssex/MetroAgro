@@ -38,7 +38,7 @@ class MyBounty extends Component {
           .catch(err => console.log(err));
       };
  
-    deleteCrops = id => {
+    deleteMyBounty = id => {
         API.deleteMyBounty(id)
             .then(res => this.loadMyBounty())
             .catch(err => console.log(err));
@@ -54,6 +54,7 @@ class MyBounty extends Component {
     handleFormSubmit = event => {
         console.log("handleFormSubmit hit")
         event.preventDefault();
+        console.log(this.state);
         if (this.state.crop) {
             API.saveMyBounty({
                 crop: this.state.crop,

@@ -5,14 +5,13 @@ const mybountyCountroller = require("../../controllers/mybountyController");
 router.route("/")
   .get(mybountyCountroller.findAll)
   .post(mybountyCountroller.create)
-  // .delete(mybountyCountroller.delete);
+
 
 // Matches with "/api/harvest/:id"
-// router
-//   .route("/:id")
-//   .get(mybountyCountroller.findById)
-//   .put(mybountyCountroller.update)
-//   .delete(mybountyCountroller.remove);
+router.route("/:id")
+  .get(mybountyCountroller.findById)
+  .put(mybountyCountroller.update)
+  .delete(mybountyCountroller.remove);
 
 // //Matches with "api/harvest/:item"
 // router 
