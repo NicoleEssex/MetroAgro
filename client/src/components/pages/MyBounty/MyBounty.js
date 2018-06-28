@@ -38,7 +38,7 @@ class MyBounty extends Component {
           .catch(err => console.log(err));
       };
  
-    deleteCrops = id => {
+    deleteMyBounty = id => {
         API.deleteMyBounty(id)
             .then(res => this.loadMyBounty())
             .catch(err => console.log(err));
