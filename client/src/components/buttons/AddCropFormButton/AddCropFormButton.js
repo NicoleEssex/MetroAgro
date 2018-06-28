@@ -7,10 +7,10 @@ import Reactstrap from "reactstrap"
 
 
 
-const AddCropFormButton = () => (
-  <Link to="api/harvest">
-        <Button className="acfb" type="submit" onClick={this.toggle}>Add a Crop</Button>
-  </Link>
+const AddCropFormButton = (props) => (
+  <div>
+        <Button className="acfb" type="submit" onClick={props.handleFormSubmit}>Add a Crop</Button>
+  </div>
 );
 
 export default AddCropFormButton;

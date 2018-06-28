@@ -1,25 +1,25 @@
 const router = require("express").Router();
-const harvestController = require("../../controllers/harvestController");
+const mybountyCountroller = require("../../controllers/mybountyController");
 
 // Matches with "/api/harvest"
-router.route("/api/harvest")
-  .get(harvestController.findAll)
-  .post(harvestController.create)
-  .delete(harvestController.delete);
+router.route("/")
+  .get(mybountyCountroller.findAll)
+  .post(mybountyCountroller.create)
+  // .delete(mybountyCountroller.delete);
 
 // Matches with "/api/harvest/:id"
-router
-  .route("/:id")
-  .get(harvestController.findById)
-  .put(harvestController.update)
-  .delete(harvestController.remove);
+// router
+//   .route("/:id")
+//   .get(mybountyCountroller.findById)
+//   .put(mybountyCountroller.update)
+//   .delete(mybountyCountroller.remove);
 
-//Matches with "api/harvest/:item"
-router 
-  .route("/:item")
-  .get(harvestController.findByItem)
-  .put(harvestController.update)
-  .delete(harvestController.remove);
+// //Matches with "api/harvest/:item"
+// router 
+//   .route("/:item")
+//   .get(mybountyCountroller.findByItem)
+//   .put(mybountyCountroller.update)
+//   .delete(mybountyCountroller.remove);
 
 module.exports = router;
 
