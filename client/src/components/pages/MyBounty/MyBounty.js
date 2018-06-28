@@ -41,6 +41,7 @@ class MyBounty extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
+        console.log(this.state);
         if (this.state.crop) {
             API.saveCrop({
                 crop: this.state.crop,
