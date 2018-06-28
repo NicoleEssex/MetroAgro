@@ -2,9 +2,10 @@ const router = require("express").Router();
 const harvestController = require("../../controllers/harvestController");
 
 // Matches with "/api/harvest"
-router.route("/")
+router.route("/api/harvest")
   .get(harvestController.findAll)
-  .post(harvestController.create);
+  .post(harvestController.create)
+  .delete(harvestController.delete);
 
 // Matches with "/api/harvest/:id"
 router
@@ -16,7 +17,7 @@ router
 //Matches with "api/harvest/:item"
 router 
   .route("/:item")
-  .get(harvestController.findbyItem)
+  .get(harvestController.findByItem)
   .put(harvestController.update)
   .delete(harvestController.remove);
 

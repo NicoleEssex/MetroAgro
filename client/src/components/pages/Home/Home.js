@@ -16,13 +16,13 @@ WebFont.load({
   export default class Home extends React.Component {
     render() {
       return (
-        <Container className="homebkg">
+        <Container id="homebkg">
           <Row>
             <Col className="app-title"><h1>AgraLove</h1></Col>
           </Row>
           <Row>
             <Col>
-            <div className="image-container"><a href = "/availharvest/"> <img src={require("./vegibask500.jpg")} id="availHarvImg" alt="basket of fresh vegetables"/>
+            <div className="image-container"><a href = "/availharvests/"> <img src={require("./vegibask500.jpg")} id="availHarvImg" alt="basket of fresh vegetables"/>
             <p className="image-title">Available Harvests</p></a>
             </div>
             </Col>

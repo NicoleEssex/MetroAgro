@@ -19,7 +19,11 @@
     max-width: 500px;
     margin-right:auto;
     margin-left:auto;
-    padding:10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom:10px;
+
 }
 
  #myBountyTitle {
@@ -39,22 +43,35 @@ div .popdbinfo{
 }
 
  #mb-main-container {
-    background-image: url(vegbask2\ copy.jpg);  
+    background-image: url(vegbask2\ copy.jpg);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 600px;
+    height: 400%;
+    margin-top: 20px;
+
 }
 
 .form-check-label {
     margin-right: 12px;
-    font-size: 16px;
-    padding-right: 5px;
-    
+    font-size: 23px;
+    margin-bottom: 8px;
+    position: relative;
 }
 
+/* input.form-check-input {
+    padding-bottom: 50px;
+} */
 
-#checkAvail {
-    margin-left:10px;
+#ready {
+    margin-left: 10px;
+    padding: 0px;
+    margin-top: 10px;   
 }
 
-.acfb {
-    margin:0px;
-    padding:0px;
+#checkbox {
+    margin-bottom:50px;
+    position: absolute;
+    top: -13px;
 }
+
