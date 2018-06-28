@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 mongoose.Promise = global.Promise;
 
+
 // This file empties the Books collection and inserts the books below
 
 mongoose.connect(
@@ -32,7 +33,9 @@ const mybountySeed = [
 
 db.MyBounty
   .remove({})
+
   .then(() => db.MyBounty.collection.insertMany(mybountySeed))
+
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);
@@ -40,4 +43,5 @@ db.MyBounty
   .catch(err => {
     console.error(err);
     process.exit(1);
+
   });
