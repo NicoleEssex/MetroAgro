@@ -1,38 +1,41 @@
 const mongoose = require("mongoose");
-const db = require("../models/Harvest");
+const db = require("../models");
 mongoose.Promise = global.Promise;
+
 
 // This file empties the Books collection and inserts the books below
 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://127.0.0.1/urbangarden",
-    {
-        useMongoClient: true
-    }
+    process.env.MONGODB_URI || "mongodb://localhost/metroagro",
+    // {
+    //     useMongoClient: true
+    // }
 );
 
-const harvestSeed = [
+const mybountySeed = [
     {
-        crop: "Cherries",
-        harvest_date: new Date(Date.now()),
-        pickup_time: "12:00pm",
-        available_until: "8:00pm",
+        crop: "Strawberries",
+        date_available: new Date(Date.now()),
+        pickup_time_start: "12:00pm",
+        pickup_time_end: "8:00pm",
         comments: "Like, 20 lbs of cherries available. First come, first serve.",
         available: false
     },
     {
-        crop: "Raspberries",
-        harvest_date: new Date(Date.now()),
-        pickup_time: "11:00am",
-        available_until: "10:00pm",
+        crop: "Apples",
+        date_available: new Date(Date.now()),
+        pickup_time_start: "11:00am",
+        pickup_time_end: "10:00pm",
         comments: "So many raspberries",
         available: false
     }
 ];
 
-db.Harvest
+db.MyBounty
   .remove({})
-  .then(() => db.Harvest.collection.insertMany(harvestSeed))
+
+  .then(() => db.MyBounty.collection.insertMany(mybountySeed))
+
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);
@@ -40,4 +43,5 @@ db.Harvest
   .catch(err => {
     console.error(err);
     process.exit(1);
+
   });

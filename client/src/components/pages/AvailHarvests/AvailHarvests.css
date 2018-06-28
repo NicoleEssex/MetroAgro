@@ -1,0 +1,79 @@
+.containerwrap {
+    max-width: 500px;
+    margin-right:auto;
+    margin-left:auto;
+}
+#vegibaskah {
+    width: 100%;
+    height: 100%;
+
+}
+
+.borders {
+    background-image: url(vegibask500.jpg);
+    height: 10px;
+    opacity: .7;
+}
+
+h1#pageTitle {
+    font-family: 'Indie Flower', 'cursive';
+    margin-top: 15px;
+    
+}
+div#Color1 {
+    box-sizing: border-box;
+    Width: 100%;
+    Height:75px;
+    background-color: #d5290d;
+    padding: 0px;
+    margin: 0px;
+}
+
+div#Color2 {
+    box-sizing: border-box;
+    Width: 100%;
+    Height: 75px;
+    background-color: #fdc021;
+    padding: 0px;
+    margin: 0px;
+    margin-right:0px;
+    align-content: center;
+}
+
+div#Color3 {
+    box-sizing: border-box;
+    Width: 100%;
+    Height:75px;
+    background-color:#67ab23 ;
+    padding: 0px;
+    margin: 0px;
+}
+div.imageAlign {
+    text-align: center;
+    padding:0px;
+    margin: 0px;
+}
+
+#titleCol {
+    padding-right: 0px;
+}
+
+#homeBtnCol {
+    padding-left: 0px;
+    margin-left: 0px;
+
+}
+
+.subtitle {
+    font-family: 'Roboto Condensed', 'sans-serif';
+    color: white;
+    text-align: center;
+    border-bottom: 2px white solid;
+}
+
+div#dbPopAh.jumbotron {
+    background-color:#6c4967;
+    opacity: .9;
+    margin: 0px;
+    height: 500px;
+}
