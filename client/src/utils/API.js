@@ -2,15 +2,16 @@ import axios from "axios";
 
 export default {
     //gets all crops
-    getCrops: () => {
-        return axios.get("/api/Harvest");
+    getMyBounty: () => {
+        return axios.get("/api/mybounty");
     },
     //deletes crops (to be called in a delete button) little red "x" maybe? 
-    deleteCrops: (id) => {
-        return axios.delete("/api/Harvest" + id);
+    deleteMyBounty: (id) => {
+        return axios.delete("/api/mybounty" + id);
     },
-    saveCrop: function(cropData) {
-        return axios.post("/api/Harvest", cropData);
+    saveMyBounty: function(my_bountyData) {
+        console.log("util api hit")
+        return axios.post("/api/mybounty", my_bountyData);
       }
     };
 

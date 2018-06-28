@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const harvestRoutes = require("./harvest");
+const mybountyRoutes = require("./harvest");
 
 // Harvest routes
-router.use("/harvest", harvestRoutes);
+router.use("/mybounty", mybountyRoutes);
 
 module.exports = router;

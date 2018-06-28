@@ -1,4 +1,4 @@
 module.exports = {
-    Harvest: require("./harvest"),
+    MyBounty: require("./mybounty"),
     User: require("./User")
   };
