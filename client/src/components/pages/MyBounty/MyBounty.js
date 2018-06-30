@@ -38,7 +38,7 @@ class MyBounty extends Component {
           .catch(err => console.log(err));
       };
  
-    deleteMyBounty = id => {
+    deleteBounty = id => {
         API.deleteMyBounty(id)
             .then(res => this.loadMyBounty())
             .catch(err => console.log(err));
@@ -91,7 +91,7 @@ class MyBounty extends Component {
                         {my_bounty.comment}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteMyBounty(my_bounty._id)} />
+                    <DeleteBtn onClick={() => this.deleteBounty(my_bounty._id)} />
                   </ListGroupItem>
                 ))}
               </ListGroup>
