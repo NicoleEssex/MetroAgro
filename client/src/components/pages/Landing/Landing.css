@@ -1,0 +1,22 @@
+.titles {
+    font-family: 'Indie Flower', 'cursive';
+    text-align: center;
+    font-size: 65px;
+    margin-top:40px;
+    background-color:#fdc021;
+    background-blend-mode: saturation;
+
+}
+
+.intro {
+    font-family: 'Roboto Condensed', 'sans-serif';
+    text-align: center;
+    font-size: 30px;
+}
+
+.wrapper {
+    max-width: 700px;
+    /* background-color: #d5290d; */
+    opacity: .9;
+    margin-top: 20px;
+}
