@@ -1,0 +1,21 @@
+
+
+ol.carousel-indicators,
+a.carousel-control-prev,
+a.carousel-control-next
+{
+    opacity:0;
+}
+
+
+div.carousel.slide {
+    background-color: white;
+    max-width: 700px;
+    text-align: center;
+}
+
+div.carousel-inner {
+    max-width: 700px;
+    max-height: 280px;
+    border: 10px solid black;
+}

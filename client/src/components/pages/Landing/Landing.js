@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import WebFont from "webfontloader";
+import "./Landing.css";
+import Carousel from "./../../Carousel/Carousel.js"
+
 // import DeleteBtn from "../../components/DeleteBtn";
 
 // import API from "./utils/API.js";
@@ -6,7 +10,14 @@ import React, { Component } from "react";
 // import { Col, Row, Container } from "../../components/Grid";
 // import { List, ListItem } from "../../components/List";
 // import { Input, TextArea, FormBtn } from "../../components/Form";
-import {Col, Row, Container} from "reactstrap";
+import {Container} from "reactstrap";
+
+
+WebFont.load({
+    google: {
+        families: ['Indie Flower', 'cursive', 'Roboto Condensed', 'sans-serif']
+    }
+})
 
 class Landing extends Component {
     constructor(props){
@@ -18,19 +29,25 @@ class Landing extends Component {
 
   render() {
     return (
-        <Container fluid>
-        {this.props.test}
-            <h1> Welcome to Metro Agro, {this.props.name}</h1>
+        <Container fluid className = "wrapper">
+        
+        {/* {this.props.test} */}
+            <p className = "titles">MetroAgro {this.props.name}</p>
             <br/>
+            <Carousel/>
+            <br/>
+            <br/>
+            <br/>
+            <p className = "intro"> Join our community and enjoy the healthful benefits of your neighborhood grown produce while helping to cutdown on food waste.</p>
             <p> Do you want to see the bounties? <a href="/home">Click Here</a>
              </p>
              <div>
                  <hr/>
-                 Please login first
+                 Please Login 
                  <hr/>
                  <button onClick={this.loginTest}> Login </button>
                  {/* onClick={this.props.auth.login} */}
-                </div>
+            </div>
         </Container>
         );
     }
