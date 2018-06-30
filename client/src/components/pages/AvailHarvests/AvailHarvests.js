@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import WebFont from "webfontloader";
 import {Jumbotron, Col, Row, Container, ListGroup, ListGroupItem} from "reactstrap";
 import API from "../../../utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../../components/Grid";
-import HarvestModal from "../../Modal/HarvestModal";
+// import HarvestModal from "../../Modal/HarvestModal";
 import HomeButton from "../../buttons/HomeButton"
 import "./AvailHarvests.css"
 // import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';

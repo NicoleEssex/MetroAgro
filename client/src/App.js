@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { Col, Row, Container } from "../src/components/grid";
 import AvailHarvests from "./components/pages/AvailHarvests";
 import Home from "./components/pages/Home";
 import Landing from "./components/pages/Landing";
 import MyBounty from "./components/pages/MyBounty";
 import CreateUser from "./components/pages/CreateUser";
-import HarvestModal from "./components/Modal/HarvestModal";
-import {Container, Button} from "reactstrap";
+// import HarvestModal from "./components/Modal/HarvestModal";
+// import {Container} from "reactstrap";
 import "./App.css";
-import Callback from './Callback/Callback';
+// import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
-import auth0 from "auth0-js";
-import sandboxMelinda from "./components/sandboxMelinda";
-
-
+// import auth0 from "auth0-js";
+// import sandboxMelinda from "./components/sandboxMelinda";
 import "./components/sandboxMelinda/sandbox.css";
 const auth = new Auth();
 
