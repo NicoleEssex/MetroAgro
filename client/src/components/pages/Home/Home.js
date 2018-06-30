@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import WebFont from "webfontloader";
 import {Col, Row, Container } from "reactstrap"
 import "./Home.css"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import API from "./utils/API.js";
 // import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../../components/Grid";
