@@ -12,7 +12,11 @@ import "./App.css";
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
+import auth0 from "auth0-js";
+import sandboxMelinda from "./components/sandboxMelinda";
 
+
+import "./components/sandboxMelinda/sandbox.css";
 const auth = new Auth();
 
 const handleAuthentication = ({location}) => {

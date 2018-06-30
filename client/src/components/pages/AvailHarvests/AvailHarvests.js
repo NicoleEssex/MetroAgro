@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import WebFont from "webfontloader";
-import {Jumbotron, Col, Row, Container } from "reactstrap";
-// import API from "../../../utils/API";
+import {Jumbotron, Col, Row, Container, ListGroup, ListGroupItem} from "reactstrap";
+import API from "../../../utils/API";
 import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../../components/Grid";
 import HarvestModal from "../../Modal/HarvestModal";
@@ -15,6 +15,26 @@ WebFont.load({
   })
 
 class AvailHarvests extends Component {
+    state = {
+        my_bounty: [],
+        crop: "",
+        date_available: "",
+        pickup_time_start: "",
+        pickup_time_end:"",
+        comment:""
+      };
+
+      componentDidMount() {
+        this.loadMyBounty();
+    }
+
+    loadMyBounty = () => {
+        API.getMyBounty()
+          .then(res =>
+            this.setState({ my_bounty: res.data, crop: "", date_available: "", pickup_time_start:"", pickup_time_end: "", comment:"" })
+          )
+          .catch(err => console.log(err));
+      };
 
   render() {
     return (
@@ -55,6 +75,21 @@ class AvailHarvests extends Component {
         <Jumbotron id = "dbPopAh">
             <h4 className = "subtitle">Please select the crop you're interested in to get more details about where and when you can pick it up. </h4>
             <div className = "dbPopulate">
+            {this.state.my_bounty.length ? (
+              <ListGroup>
+                {this.state.my_bounty.map(my_bounty => (
+                  <ListGroupItem key={my_bounty._id}>
+                      <strong>
+                        {my_bounty.crop} is ready on {my_bounty.date_available} from {my_bounty.pickup_time_start} until
+                        {my_bounty.pickup_time_end} additional comments:
+                        {my_bounty.comment}
+                      </strong>
+                  </ListGroupItem>
+                ))}
+              </ListGroup>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
             
             </div>
         </Jumbotron>

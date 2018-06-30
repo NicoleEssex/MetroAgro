@@ -30,7 +30,7 @@ WebFont.load({
         <Container id="homebkg">
         {this.props.test}
           <Row>
-            <Col className="app-title"><h1>AgraLove</h1></Col>
+            <Col className="app-title"><h1>MetroAgro</h1></Col>
           </Row>
           <Row>
             <Col>
