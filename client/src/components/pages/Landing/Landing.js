@@ -39,12 +39,7 @@ class Landing extends Component {
             <br/>
             <br/>
             <p className = "intro"> Join our community and enjoy the healthful benefits of your neighborhood grown produce while helping to cutdown on food waste.</p>
-            <p> Do you want to see the bounties? <a href="/home">Click Here</a>
-             </p>
              <div>
-                 <hr/>
-                 Please Login 
-                 <hr/>
                  <button onClick={this.loginTest}> Login </button>
                  {/* onClick={this.props.auth.login} */}
             </div>
