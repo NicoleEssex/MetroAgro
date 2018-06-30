@@ -14,7 +14,6 @@ import Auth from './Auth/Auth';
 import history from './history';
 // import auth0 from "auth0-js";
 // import sandboxMelinda from "./components/sandboxMelinda";
-
 import "./components/sandboxMelinda/sandbox.css";
 const auth = new Auth();
 
@@ -31,26 +30,36 @@ constructor(props){
 }
 
 componentDidMount=()=>{
-  this.setState({test:"this is a test"})
+  this.setState({})
 }
+
 login() {
   auth.login()
+}
+storeAuth = (object) => {
+  if(!this.state.access_token){
+  this.setState(object);
+
+  }
+  console.log(this.state);
 }
 changeAppState = (name, value) => {
   this.setState({[name]:value})
 }
   render() {
+    // const { isAuthenticated } = this.props.auth;
     return (
       
       
         <Router  history={history}>
 
           <Switch>
-            <Route exact path="/" component={() => <Landing auth={auth}  login={this.login} test={this.state.test} />} />
+            <Route exact path="/" component={() => <Landing auth={auth}  login={this.login}  />} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/mybounty" component={MyBounty} />
             <Route exact path="/availharvests" component={AvailHarvests} />
             <Route exact path="/createuser" component={CreateUser} />
+            <Route path = "/callback" component={()=><Home state={this.state} storeAuth={this.storeAuth}/>} />
           </Switch>
 
         </Router>
