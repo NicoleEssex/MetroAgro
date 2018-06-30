@@ -3,6 +3,7 @@ const db = require("../models");
 // Defining methods for the harvestController
 module.exports = {
   findAll: function(req, res) {
+    console.log("popping something here");
     db.MyBounty
       .find(req.query)
       .sort({ date: -1 })
@@ -35,6 +36,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
+    console.log("something something something");
     db.MyBounty
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())

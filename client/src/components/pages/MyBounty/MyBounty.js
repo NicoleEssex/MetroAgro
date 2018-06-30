@@ -23,7 +23,7 @@ class MyBounty extends Component {
         date_available: "",
         pickup_time_start: "",
         pickup_time_end:"",
-        comment:""
+        comments:""
       };
 
     componentDidMount() {
@@ -39,6 +39,7 @@ class MyBounty extends Component {
       };
  
     deleteBounty = id => {
+        console.log("I'm running a fun-ction");
         API.deleteMyBounty(id)
             .then(res => this.loadMyBounty())
             .catch(err => console.log(err));
@@ -61,7 +62,7 @@ class MyBounty extends Component {
                 date_available: this.state.date_available,
                 pickup_time_start: this.state.pickup_time_start,
                 pickup_time_end: this.state.pickup_time_end,
-                comment: this.state.comment
+                comments: this.state.comments
 
             })
                 .then(res => this.loadMyBounty())
@@ -87,8 +88,8 @@ class MyBounty extends Component {
                     <Link to={"/mybounty/" + my_bounty._id}>
                       <strong>
                         {my_bounty.crop} is ready on {my_bounty.date_available} from {my_bounty.pickup_time_start} until
-                        {my_bounty.pickup_time_end} additional comments:
-                        {my_bounty.comment}
+                        {my_bounty.pickup_time_end}<br/> Additional Comments:
+                        {my_bounty.comments}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteBounty(my_bounty._id)} />
@@ -132,9 +133,9 @@ class MyBounty extends Component {
                 </span>
                 <Label for="exampleText">Additional Comments</Label>
                     <Input 
-                        value={this.state.comment}
+                        value={this.state.comments}
                         onChange={this.handleInputChange}
-                        type="textarea" name="comment" id="exampleText" />
+                        type="textarea" name="comments" id="exampleText" />
                 <div className ="box-label-group">
                 <br/>
                 <Label check>

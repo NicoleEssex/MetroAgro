@@ -23,7 +23,7 @@ WebFont.load({
     }
   componentDidMount(){
     let authResp = queryString.parse(window.location.hash);
-    this.props.storeAuth(authResp);
+    // this.props.storeAuth(authResp);
   }
     render() {
       return (
