@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import WebFont from "webfontloader";
 import {Col, Row, Container } from "reactstrap"
 import "./Home.css"
-import { Link } from "react-router-dom";
+import queryString from "query-string";
+// import { Link } from "react-router-dom";
 // import API from "./utils/API.js";
 // import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../../components/Grid";
@@ -13,10 +14,21 @@ WebFont.load({
     }
   })
 
+
+
+
   export default class Home extends React.Component {
+    constructor(props){
+      super(props)
+    }
+  componentDidMount(){
+    let authResp = queryString.parse(window.location.hash);
+    this.props.storeAuth(authResp);
+  }
     render() {
       return (
         <Container id="homebkg">
+        {this.props.test}
           <Row>
             <Col className="app-title"><h1>MetroAgro</h1></Col>
           </Row>

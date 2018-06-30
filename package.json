@@ -24,6 +24,7 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "mongoose": "^5.1.6",
+    "query-string": "^6.1.0",
     "react-bootstrap": "^0.32.1",
     "webfontloader": "^1.6.28"
   }

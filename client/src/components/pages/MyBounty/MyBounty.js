@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { ListGroup, ListGroupItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Jumbotron, Container, Row, Col, FormGroup, Label, Input } from "reactstrap";
+import { ListGroup, ListGroupItem,Jumbotron,FormGroup, Label, Input } from "reactstrap";
 import WebFont from "webfontloader";
 import HomeButton from "../../buttons/HomeButton/";
-import HarvestModal from "../../Modal/HarvestModal";
+// import HarvestModal from "../../Modal/HarvestModal";
 import AddCropFormButton from "../../buttons/AddCropFormButton";
 import "./MyBounty.css"
 import API from "../../../utils/API"
