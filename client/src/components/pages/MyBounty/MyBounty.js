@@ -5,10 +5,11 @@ import HomeButton from "../../buttons/HomeButton/";
 import App from "../../../App";
 // import HarvestModal from "../../Modal/HarvestModal";
 import AddCropFormButton from "../../buttons/AddCropFormButton";
-import "./MyBounty.css"
-import API from "../../../utils/API"
-import DeleteBtn from "../../buttons/DeleteBtn/DeleteBtn"
+import "./MyBounty.css";
+import API from "../../../utils/API";
+import DeleteBtn from "../../buttons/DeleteBtn/DeleteBtn";
 import { Link } from "react-router-dom";
+import imagesObject from "../../ImagesObject/ImagesObject";
 
 
 WebFont.load({
@@ -40,7 +41,8 @@ class MyBounty extends Component {
           .catch(err => console.log(err));
       };
  
-    deleteMyBounty = id => {
+    deleteBounty = id => {
+        console.log("I'm running a fun-ction");
         API.deleteMyBounty(id)
             .then(res => this.loadMyBounty())
             .catch(err => console.log(err));
@@ -52,6 +54,11 @@ class MyBounty extends Component {
             [name]: value
         });
     };
+
+    setCardImage = event => {
+        let prop = event.target.innerHTML;
+        this.setState({imagesObject:[prop]})
+    }
 
     handleFormSubmit = event => {
         // console.log("handleFormSubmit hit")
@@ -114,7 +121,7 @@ class MyBounty extends Component {
                         Additional Comments:{my_bounty.comments}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteMyBounty(my_bounty._id)} />
+                    <DeleteBtn onClick={() => this.deleteBounty(my_bounty._id)} />
                   </ListGroupItem>
                 ))}
               </ListGroup>
