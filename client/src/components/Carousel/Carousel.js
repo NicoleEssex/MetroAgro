@@ -1,6 +1,5 @@
 import React from 'react';
 import { UncontrolledCarousel } from 'reactstrap';
-import cilantroCard from "./images/cilantroCard.jpg";
 import "./Carousel.css";
 
 
