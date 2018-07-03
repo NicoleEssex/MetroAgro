@@ -6,15 +6,21 @@ import Home from "./components/pages/Home";
 import Landing from "./components/pages/Landing";
 import MyBounty from "./components/pages/MyBounty";
 import CreateUser from "./components/pages/CreateUser";
+import CardComponent from "./components/cards/CardComponent";
 // import HarvestModal from "./components/Modal/HarvestModal";
 // import {Container} from "reactstrap";
 import "./App.css";
+import "./components/cards/CardComponent.css";
 // import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
 // import auth0 from "auth0-js";
-// import sandboxMelinda from "./components/sandboxMelinda";
-import "./components/sandboxMelinda/sandbox.css";
+
+// *******************
+// import "./components/sandboxMelinda/sandbox.css";
+// *******************
+
+
 const auth = new Auth();
 
 const handleAuthentication = ({location}) => {
@@ -56,6 +62,7 @@ changeAppState = (name, value) => {
           <Switch>
             <Route exact path="/" component={() => <Landing auth={auth}  login={this.login}  />} />
             <Route exact path="/home" component={Home} />
+            <Route exact path="/cards" component={CardComponent} />
             <Route exact path="/mybounty" component={MyBounty} />
             <Route exact path="/availharvests" component={AvailHarvests} />
             <Route exact path="/createuser" component={CreateUser} />
