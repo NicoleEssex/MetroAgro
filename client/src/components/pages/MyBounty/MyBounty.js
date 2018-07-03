@@ -4,10 +4,11 @@ import WebFont from "webfontloader";
 import HomeButton from "../../buttons/HomeButton/";
 // import HarvestModal from "../../Modal/HarvestModal";
 import AddCropFormButton from "../../buttons/AddCropFormButton";
-import "./MyBounty.css"
-import API from "../../../utils/API"
-import DeleteBtn from "../../buttons/DeleteBtn/DeleteBtn"
+import "./MyBounty.css";
+import API from "../../../utils/API";
+import DeleteBtn from "../../buttons/DeleteBtn/DeleteBtn";
 import { Link } from "react-router-dom";
+import imagesObject from "../../ImagesObject/ImagesObject";
 
 
 WebFont.load({
@@ -51,6 +52,11 @@ class MyBounty extends Component {
             [name]: value
         });
     };
+
+    setCardImage = event => {
+        let prop = event.target.innerHTML;
+        this.setState({imagesObject:[prop]})
+    }
 
     handleFormSubmit = event => {
         console.log("handleFormSubmit hit")
