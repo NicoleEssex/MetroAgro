@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { ListGroup, ListGroupItem,Jumbotron,FormGroup, Label, Input } from "reactstrap";
+import { ListGroup, ListGroupItem,Jumbotron,FormGroup, Label, Input, FormFeedback, FormText, Card, CardBody, CardImg, CardText, CardTitle} from "reactstrap";
 import WebFont from "webfontloader";
 import HomeButton from "../../buttons/HomeButton/";
+import App from "../../../App";
 // import HarvestModal from "../../Modal/HarvestModal";
 import AddCropFormButton from "../../buttons/AddCropFormButton";
 import "./MyBounty.css"
@@ -18,12 +19,13 @@ WebFont.load({
 
 class MyBounty extends Component {
     state = {
+        
         my_bounty: [],
         crop: "",
         date_available: "",
         pickup_time_start: "",
         pickup_time_end:"",
-        comment:""
+        comments:""
       };
 
     componentDidMount() {
@@ -33,7 +35,7 @@ class MyBounty extends Component {
     loadMyBounty = () => {
         API.getMyBounty()
           .then(res =>
-            this.setState({ my_bounty: res.data, crop: "", date_available: "", pickup_time_start:"", pickup_time_end: "", comment:"" })
+            this.setState({ my_bounty: res.data, crop: "", date_available: "", pickup_time_start:"", pickup_time_end: "", comments:"" })
           )
           .catch(err => console.log(err));
       };
@@ -52,7 +54,7 @@ class MyBounty extends Component {
     };
 
     handleFormSubmit = event => {
-        console.log("handleFormSubmit hit")
+        // console.log("handleFormSubmit hit")
         event.preventDefault();
         console.log(this.state);
         if (this.state.crop) {
@@ -61,7 +63,7 @@ class MyBounty extends Component {
                 date_available: this.state.date_available,
                 pickup_time_start: this.state.pickup_time_start,
                 pickup_time_end: this.state.pickup_time_end,
-                comment: this.state.comment
+                comments: this.state.comments
 
             })
                 .then(res => this.loadMyBounty())
@@ -79,16 +81,37 @@ class MyBounty extends Component {
                 <Jumbotron className="myBountyContainer">
                     <p id="myBountyTitle">Your Crops</p>
                     <div className="popdbinfo">
-                        Crops will populate here from database.
-                        {this.state.my_bounty.length ? (
-              <ListGroup>
+                    {this.state.my_bounty.length ? (    
+                    <ListGroup >
+                    {this.state.my_bounty.map(my_bounty => (
+                    <Card className="card-display" key={my_bounty._id}>
+                        <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap">
+                        </CardImg>
+                        <CardBody>
+                            <CardTitle className="card-title">{my_bounty.crop}</CardTitle>
+                            <CardText className="card-text">{my_bounty.date_available}</CardText>
+                            <CardText className="card-text">From: {my_bounty.pickup_time_start}, Until: {my_bounty.pickup_time_end}</CardText>
+                            <CardText>Additional Comments:{my_bounty.comments}</CardText>
+                            <DeleteBtn className="delete-button" onClick={() => this.deleteMyBounty(my_bounty._id)}/>
+                        </CardBody>
+                    </Card>
+                    ))}
+                    </ListGroup>
+                ) : (
+                    <h3>No Results to Display</h3>
+                  )}
+                      </div>
+                  </Jumbotron>    
+              
+              {/* <ListGroup>
                 {this.state.my_bounty.map(my_bounty => (
                   <ListGroupItem key={my_bounty._id}>
                     <Link to={"/mybounty/" + my_bounty._id}>
                       <strong>
-                        {my_bounty.crop} is ready on {my_bounty.date_available} from {my_bounty.pickup_time_start} until
-                        {my_bounty.pickup_time_end} additional comments:
-                        {my_bounty.comment}
+                        {my_bounty.crop}<br/>
+                        Available on: {my_bounty.date_available}<br/>
+                        From: {my_bounty.pickup_time_start},  Until: {my_bounty.pickup_time_end} <br/>
+                        Additional Comments:{my_bounty.comments}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteMyBounty(my_bounty._id)} />
@@ -98,19 +121,28 @@ class MyBounty extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
-                </div>
-            </Jumbotron>
+                </div> */}
+            {/* </Jumbotron> */}
  
             <FormGroup className="mbFormGroup">
+           
+            {/* <Label for="userName">User Name</Label>
+            <Input valid />
+            <FormFeedback>Dagnabbit! that name is already taken</FormFeedback>
+            <FormText>Please create a user name that will be associated with your crops.</FormText> */}
+       
                 <Label  for="exampleSelect">Category of Harvest</Label>
                     <Input
                         value={this.state.crop}
                         onChange={this.handleInputChange} 
                         type="select"    name="crop"  id="exampleSelect">
                         <option>Select One</option>
-                        <option>Fruit</option>
-                        <option>Vegetable</option>
-                        <option>Herbs</option>
+                        <option>Apples</option>
+                        <option>Beans</option>
+                        <option>Peppers</option>
+                        <option>Tomato</option>
+                        <option>Squash</option>
+
                     </Input>
                 <Label for="exampleDate">Date</Label>
                     <Input 
@@ -132,9 +164,9 @@ class MyBounty extends Component {
                 </span>
                 <Label for="exampleText">Additional Comments</Label>
                     <Input 
-                        value={this.state.comment}
+                        value={this.state.comments}
                         onChange={this.handleInputChange}
-                        type="textarea" name="comment" id="exampleText" />
+                        type="textarea" name="comments" id="exampleText" />
                 <div className ="box-label-group">
                 <br/>
                 <Label check>
