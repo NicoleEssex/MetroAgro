@@ -1,0 +1,43 @@
+#root, div {
+	padding: 0
+}
+
+.card.customCard {	
+	margin: 0 auto;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	margin-left: 3%;
+	margin-right: 3%;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	text-align: center;
+}
+
+.card-body {
+	padding-top: 2% !important;
+	padding-bottom: 4% !important;
+}
+
+.card-img-top {
+	margin-top: 4%;
+	width: 50% !important; 
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+}
+
+h5.card-title {
+	font-size: 30px;
+}
+
+button.btn.btn-secondary {
+	font-size: 24px;
+	width: 100%;
+}
+
+@media screen and (max-width: 575px) {
+	
+	button.btn.btn-secondary { 
+	width: 50%;
+}}
