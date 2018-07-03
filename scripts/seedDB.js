@@ -26,7 +26,7 @@ const mybountySeed = [
         date_available: new Date(Date.now()),
         pickup_time_start: "11:00am",
         pickup_time_end: "10:00pm",
-        comments: "So many raspberries",
+        comments: "Buckets of apples",
         available: false
     }
 ];
