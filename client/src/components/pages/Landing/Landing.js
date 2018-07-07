@@ -40,7 +40,7 @@ class Landing extends Component {
             <br/>
             <p className = "intro"> Join our community and enjoy the healthful benefits of your neighborhood grown produce while helping to cutdown on food waste.</p>
              <div>
-                 <button onClick={this.loginTest}> Login </button>
+                 <button className="login-button" onClick={this.loginTest}> LOGIN </button>
                  {/* onClick={this.props.auth.login} */}
             </div>
         </Container>
