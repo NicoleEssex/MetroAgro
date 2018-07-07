@@ -103,7 +103,7 @@ class MyBounty extends Component {
                             <CardText className="card-text">{my_bounty.date_available}</CardText>
                             <CardText className="card-text">From: {my_bounty.pickup_time_start}, Until: {my_bounty.pickup_time_end}</CardText>
                             <CardText>Additional Comments:{my_bounty.comments}</CardText>
-                            <DeleteBtn className="delete-button" onClick={() => this.deleteMyBounty(my_bounty._id)}/>
+                            <DeleteBtn className="delete-button" onClick={() => this.deleteBounty(my_bounty._id)}/>
                         </CardBody>
                     </Card>
                     ))}
