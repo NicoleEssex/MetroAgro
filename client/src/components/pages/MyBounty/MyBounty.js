@@ -31,7 +31,7 @@ class MyBounty extends Component {
 
     componentDidMount() {
         this.loadMyBounty();
-        this.setCardImage();
+        // this.setCardImage();
     }
 
     loadMyBounty = () => {
@@ -56,12 +56,13 @@ class MyBounty extends Component {
         });
     };
 
-    setCardImage = event => {
-        let prop = event.target.innerHTML;
-        this.setState ({
-            image: imagesObject[prop]
-        });
-    }
+    // setCardImage = event => {
+    //     let prop = event.target.innerHTML;
+    //     this.setState ({
+    //         image: imagesObject[prop]
+    //     });
+    // }
+    
 
     handleFormSubmit = event => {
         // console.log("handleFormSubmit hit")
@@ -95,7 +96,7 @@ class MyBounty extends Component {
                     <ListGroup >
                     {this.state.my_bounty.map(my_bounty => (
                     <Card className="card-display" key={my_bounty._id}>
-                        <CardImg top width="100%" src={this.state.image?this.state.image:{src: 'https://cdn1.medicalnewstoday.com/content/images/articles/285/285753/beans.jpg'}}>
+                        <CardImg top width="100%" src={imagesObject[my_bounty.crop.toLowerCase()]}>
                         </CardImg>
                         <CardBody>
                             <CardTitle className="card-title">{my_bounty.crop}</CardTitle>
