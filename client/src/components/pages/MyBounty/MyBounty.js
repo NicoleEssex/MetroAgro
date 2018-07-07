@@ -4,9 +4,12 @@ import WebFont from "webfontloader";
 import HomeButton from "../../buttons/HomeButton/";
 // import HarvestModal from "../../Modal/HarvestModal";
 import AddCropFormButton from "../../buttons/AddCropFormButton";
-import "./MyBounty.css"
-import API from "../../../utils/API"
-import DeleteBtn from "../../buttons/DeleteBtn/DeleteBtn"
+import "./MyBounty.css";
+import API from "../../../utils/API";
+import DeleteBtn from "../../buttons/DeleteBtn/DeleteBtn";
+import { Link } from "react-router-dom";
+import imagesObject from "../../ImagesObject/ImagesObject";
+
 
 
 WebFont.load({
@@ -31,6 +34,7 @@ class MyBounty extends Component {
 
     componentDidMount() {
         this.loadMyBounty();
+        // this.setCardImage();
     }
 
     loadMyBounty = () => {
@@ -41,7 +45,8 @@ class MyBounty extends Component {
           .catch(err => console.log(err));
       };
  
-    deleteMyBounty = id => {
+    deleteBounty = id => {
+        console.log("I'm running a fun-ction");
         API.deleteMyBounty(id)
             .then(res => this.loadMyBounty())
             .catch(err => console.log(err));
@@ -53,6 +58,14 @@ class MyBounty extends Component {
             [name]: value
         });
     };
+
+    // setCardImage = event => {
+    //     let prop = event.target.innerHTML;
+    //     this.setState ({
+    //         image: imagesObject[prop]
+    //     });
+    // }
+    
 
     handleFormSubmit = event => {
         // console.log("handleFormSubmit hit")
@@ -89,8 +102,7 @@ class MyBounty extends Component {
                     <ListGroup >
                     {this.state.my_bounty.map(my_bounty => (
                     <Card className="card-display" key={my_bounty._id}>
-                     <DeleteBtn className="delete-button" onClick={() => this.deleteMyBounty(my_bounty._id)}/>
-                        <CardImg id="cardImage"top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap">
+                        <CardImg top width="100%" src={imagesObject[my_bounty.crop.toLowerCase()]}>
                         </CardImg>
                         <CardBody>
                             <CardTitle className="card-title">{my_bounty.crop}</CardTitle>
@@ -119,7 +131,7 @@ class MyBounty extends Component {
                         Additional Comments:{my_bounty.comments}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteMyBounty(my_bounty._id)} />
+                    <DeleteBtn onClick={() => this.deleteBounty(my_bounty._id)} />
                   </ListGroupItem>
                 ))}
               </ListGroup>

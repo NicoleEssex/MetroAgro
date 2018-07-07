@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const mybountyCountroller = require("../../controllers/mybountyController");
 
-// Matches with "/api/harvest"
+// Matches with "/api/mybounty"
 router.route("/")
   .get(mybountyCountroller.findAll)
   .post(mybountyCountroller.create)
 
 
-// Matches with "/api/harvest/:id"
+// Matches with "/api/mybounty/:id"
 router.route("/:id")
   .get(mybountyCountroller.findById)
   .put(mybountyCountroller.update)
