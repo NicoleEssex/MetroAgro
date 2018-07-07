@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { ListGroup, ListGroupItem,Jumbotron,FormGroup, Label, Input, FormFeedback, FormText, Card, CardBody, CardImg, CardText, CardTitle} from "reactstrap";
+import { ListGroup, Jumbotron,FormGroup, Label, Input, Card, CardBody, CardImg, CardText, CardTitle} from "reactstrap";
 import WebFont from "webfontloader";
 import HomeButton from "../../buttons/HomeButton/";
-import App from "../../../App";
 // import HarvestModal from "../../Modal/HarvestModal";
 import AddCropFormButton from "../../buttons/AddCropFormButton";
 import "./MyBounty.css";
@@ -10,6 +9,7 @@ import API from "../../../utils/API";
 import DeleteBtn from "../../buttons/DeleteBtn/DeleteBtn";
 import { Link } from "react-router-dom";
 import imagesObject from "../../ImagesObject/ImagesObject";
+
 
 
 WebFont.load({
@@ -26,6 +26,9 @@ class MyBounty extends Component {
         date_available: "",
         pickup_time_start: "",
         pickup_time_end:"",
+        street_address:"",
+        city:"",
+        state:"",
         comments:""
       };
 
@@ -37,7 +40,7 @@ class MyBounty extends Component {
     loadMyBounty = () => {
         API.getMyBounty()
           .then(res =>
-            this.setState({ my_bounty: res.data, crop: "", date_available: "", pickup_time_start:"", pickup_time_end: "", comments:"" })
+            this.setState({ my_bounty: res.data, crop: "", date_available: "", pickup_time_start:"", pickup_time_end: "", street_address:"", city:"", state:"", comments:"" })
           )
           .catch(err => console.log(err));
       };
@@ -74,6 +77,9 @@ class MyBounty extends Component {
                 date_available: this.state.date_available,
                 pickup_time_start: this.state.pickup_time_start,
                 pickup_time_end: this.state.pickup_time_end,
+                street_address: this.state.street_address,
+                city: this.state.city,
+                state: this.state.state_ab,
                 comments: this.state.comments
 
             })
@@ -146,13 +152,69 @@ class MyBounty extends Component {
                     <Input
                         value={this.state.crop}
                         onChange={this.handleInputChange} 
-                        type="select"    name="crop"  id="exampleSelect">
+                        type="select" name="crop" id="exampleSelect">
                         <option>Select One</option>
                         <option>Apples</option>
+                        <option>Apricot</option>
+                        <option>Arugula</option>
+                        <option>Asparagus</option>
                         <option>Beans</option>
-                        <option>Peppers</option>
-                        <option>Tomato</option>
-                        <option>Squash</option>
+                        <option>Beets</option>
+                        <option>Blackberries</option>
+                        <option>Broccoli</option>
+                        <option>Cabbage</option>
+                        <option>Cantaloupe</option>
+                        <option>Carrots</option>
+                        <option>Cauliflower</option>
+                        <option>Chard</option>
+                        <option>Cherries</option>
+                        <option>Cilantro</option>
+                        <option>Chile Pepper</option>
+                        <option>Chive</option>
+                        <option>Corn</option>
+                        <option>Cucumber</option>
+                        <option>Currant</option>
+                        <option>Dairy</option>
+                        <option>Dill</option>
+                        <option>Eggs</option>
+                        <option>Eggplant</option>
+                        <option>Figs</option>
+                        <option>Flowers</option>
+                        <option>Garlic</option>
+                        <option>Grapes</option>
+                        <option>Honey</option>
+                        <option>Honeydew</option>
+                        <option>Kale</option>
+                        <option>Lavender</option>
+                        <option>Lettuce</option>
+                        <option>Meat</option>
+                        <option>Mint</option>
+                        <option>Nectarines</option>
+                        <option>Nuts</option>
+                        <option>Onions</option>
+                        <option>Oregano</option>
+                        <option>Parsley</option>
+                        <option>Peas</option>
+                        <option>Plums</option>
+                        <option>Potatoes</option>
+                        <option>Pumpkins</option>
+                        <option>Radishes</option>
+                        <option>Raspberries</option>
+                        <option>Rhubarbs</option>
+                        <option>Rhubarb</option>
+                        <option>Rosemary</option>
+                        <option>Sage</option>
+                        <option>Spinach</option>
+                        <option>Strawberries</option>
+                        <option>Summer Squash</option>
+                        <option>Sweet Pepper</option>
+                        <option>Sweet Potatoe</option>
+                        <option>Thyme</option>
+                        <option>Tomatoes</option>
+                        <option>Turnips</option>
+                        <option>Watermelon</option>
+                        <option>Winter Squash</option>
+                        <option>Zucchini</option>
 
                     </Input>
                 <Label for="exampleDate">Date</Label>
@@ -173,6 +235,76 @@ class MyBounty extends Component {
                         onChange={this.handleInputChange}
                         type="time" name="pickup_time_end" id="exampleTime" placeholder="time available" />
                 </span>
+                <Label for="streetAddress"> Street Address </Label>
+                    <Input
+                        value={this.state.street_address}
+                        onChange={this.handleInputChange}
+                        type="input" name="address" id="streetAddress" placeholder="Street Address" />
+                <Label for="streetAddress"> City </Label>
+                    <Input
+                        value={this.state.city}
+                        onChange={this.handleInputChange}
+                        type="input" name="city" id="city" placeholder="City" />
+                <Label for="stateSelect"> State </Label>
+                    <Input
+                        value={this.state.state}
+                        onChange={this.handleInputChange}
+                        type="select" name="state_ab" id="stateAb" placeholder="State">
+							<option value>All</option>
+							<option value="AK">AK</option>
+							<option value="AL">AL</option>
+							<option value="AR">AR</option>
+							<option value="AZ">AZ</option>
+							<option value="CA">CA</option>
+							<option value="CO">CO</option>
+							<option value="CT">CT</option>
+							<option value="DC">DC</option>
+							<option value="DE">DE</option>
+							<option value="FL">FL</option>
+							<option value="GA">GA</option>
+							<option value="HI">HI</option>
+							<option value="IA">IA</option>
+							<option value="ID">ID</option>
+							<option value="IL">IL</option>
+							<option value="IN">IN</option>
+							<option value="KS">KS</option>
+							<option value="KY">KY</option>
+							<option value="LA">LA</option>
+							<option value="MA">MA</option>
+							<option value="MD">MD</option>
+							<option value="ME">ME</option>
+							<option value="MI">MI</option>
+							<option value="MN">MN</option>
+							<option value="MO">MO</option>
+							<option value="MS">MS</option>
+							<option value="MT">MT</option>
+							<option value="NC">NC</option>
+							<option value="ND">ND</option>
+							<option value="NE">NE</option>
+							<option value="NH">NH</option>
+							<option value="NJ">NJ</option>
+							<option value="NM">NV</option>
+							<option value="NY">NY</option>
+							<option value="OH">OH</option>
+							<option value="OK">OK</option>
+							<option value="OR">OR</option>
+							<option value="PA">PA</option>
+							<option value="PR">PR</option>
+							<option value="RI">RI</option>
+							<option value="SC">SC</option>
+							<option value="SD">SD</option>
+							<option value="TN">TN</option>
+							<option value="TX">TX</option>
+							<option value="UT">UT</option>
+							<option value="VA">VA</option>
+							<option value="VI">VI</option>
+							<option value="VT">VT</option>
+							<option value="WA">WA</option>
+							<option value="WI">WI</option>
+							<option value="WV">WV</option>
+							<option value="WY">WY</option>
+                    </Input>        
+                
                 <Label for="exampleText">Additional Comments</Label>
                     <Input 
                         value={this.state.comments}

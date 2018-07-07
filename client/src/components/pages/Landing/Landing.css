@@ -20,3 +20,15 @@
     opacity: .9;
     margin-top: 20px;
 }
+
+button.login-button {
+    position: relative;
+    margin-right: 10px;
+    width: 166px;
+    height: auto;
+    background-color: #fdc021;
+    font-size: 40px;
+    font-family: 'Indie Flower', 'cursive';
+    
+}
+

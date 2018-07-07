@@ -18,7 +18,10 @@ const mybountySeed = [
         date_available: new Date(Date.now()),
         pickup_time_start: "12:00pm",
         pickup_time_end: "8:00pm",
-        comments: "Like, 20 lbs of cherries available. First come, first serve.",
+        street_address: "1803 Meadow Drive",
+        city: "Cottonwood Heights",
+        state: "UT",
+        comments: "Like, 20 lbs of strawberries available. First come, first serve.",
         available: false
     },
     {
@@ -26,6 +29,9 @@ const mybountySeed = [
         date_available: new Date(Date.now()),
         pickup_time_start: "11:00am",
         pickup_time_end: "10:00pm",
+        street_address: "7500 S 2700 E",
+        city: "Cottonwood Heights",
+        state: "UT",
         comments: "Buckets of apples",
         available: false
     }
