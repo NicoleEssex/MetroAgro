@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import WebFont from "webfontloader";
-import {Jumbotron, Col, Row, Container, ListGroup, ListGroupItem} from "reactstrap";
+import {Col, Row, Container, ListGroup, ListGroupItem, Jumbotron, FormGroup, Label, Input, FormFeedback, FormText, Card, CardBody, CardImg, CardText, CardTitle} from "reactstrap";
 import API from "../../../utils/API";
 // import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../../components/Grid";
 // import HarvestModal from "../../Modal/HarvestModal";
 import HomeButton from "../../buttons/HomeButton"
+import imagesObject from "../../ImagesObject/ImagesObject";
 import "./AvailHarvests.css"
 // import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';
 WebFont.load({
@@ -76,16 +77,20 @@ class AvailHarvests extends Component {
             <h4 className = "subtitle">Please select the crop you're interested in to get more details about where and when you can pick it up. </h4>
             <div className = "dbPopulate">
             {this.state.my_bounty.length ? (
-              <ListGroup>
-                {this.state.my_bounty.map(my_bounty => (
-                  <ListGroupItem key={my_bounty._id}>
-                      <strong>
-                        {my_bounty.crop} is ready on {my_bounty.date_available} from {my_bounty.pickup_time_start} until
-                        {my_bounty.pickup_time_end} additional comments:
-                        {my_bounty.comment}
-                      </strong>
-                  </ListGroupItem>
-                ))}
+              <ListGroup >
+              {this.state.my_bounty.map(my_bounty => (
+              <Card className="card-display" key={my_bounty._id}>
+               <CardImg top width="100%" src={imagesObject[my_bounty.crop.toLowerCase()]}>
+                  </CardImg>
+                  <CardBody>
+                      <CardTitle className="card-title">{my_bounty.crop}</CardTitle>
+                      <CardText className="card-text">{my_bounty.date_available}</CardText>
+                      <CardText className="card-text">From: {my_bounty.pickup_time_start}, Until: {my_bounty.pickup_time_end}</CardText>
+                      <CardText>Additional Comments:{my_bounty.comments}</CardText>
+                      {/* <DeleteBtn className="delete-button" onClick={() => this.deleteMyBounty(my_bounty._id)}/> */}
+                  </CardBody>
+              </Card>
+              ))}
               </ListGroup>
             ) : (
               <h3>No Results to Display</h3>
