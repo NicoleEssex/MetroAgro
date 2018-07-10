@@ -7,8 +7,8 @@ import AddCropFormButton from "../../buttons/AddCropFormButton";
 import "./MyBounty.css";
 import API from "../../../utils/API";
 import DeleteBtn from "../../buttons/DeleteBtn/DeleteBtn";
-import { Link } from "react-router-dom";
 import imagesObject from "../../ImagesObject/ImagesObject";
+import dateFns from "date-fns";
 
 
 
@@ -25,10 +25,10 @@ class MyBounty extends Component {
         crop: "",
         date_available: "",
         pickup_time_start: "",
-        pickup_time_end:"",
+        pickup_time_end: "",
         street_address:"",
         city:"",
-        state:"",
+        state_ab:"",
         comments:""
       };
 
@@ -40,7 +40,7 @@ class MyBounty extends Component {
     loadMyBounty = () => {
         API.getMyBounty()
           .then(res =>
-            this.setState({ my_bounty: res.data, crop: "", date_available: "", pickup_time_start:"", pickup_time_end: "", street_address:"", city:"", state:"", comments:"" })
+            this.setState({ my_bounty: res.data, crop: "", date_available: "", pickup_time_start:"", pickup_time_end: "", street_address:"", city:"", state_ab:"", comments:"" })
           )
           .catch(err => console.log(err));
       };
@@ -59,13 +59,56 @@ class MyBounty extends Component {
         });
     };
 
-    // setCardImage = event => {
-    //     let prop = event.target.innerHTML;
-    //     this.setState ({
-    //         image: imagesObject[prop]
-    //     });
-    // }
-    
+    convertStartTime = pickup_time_start=> {
+        console.log(pickup_time_start);
+        let time = (pickup_time_start);
+        let timeArray = time.split(':');
+        console.log(timeArray);
+        let hours = (timeArray[0]);
+        console.log(hours);
+        let minutes = (timeArray[1]);
+        console.log(minutes);
+        let timeValue = ("");
+        if(hours > 0 && hours < 12){
+            timeValue = ("" + hours);
+        } else if (hours > 12){
+            timeValue = (hours -12);
+        } else if (hours === 0){
+            timeValue = "12"
+            
+        }
+        
+        timeValue += (minutes < 10) ? ":" + minutes : ":" + minutes;
+        timeValue += (hours >= 12) ? "pm" : "";
+        console.log(timeValue);
+        console.log(pickup_time_start);
+        return(timeValue);
+    };
+    convertEndTime = pickup_time_end=> {
+        console.log(pickup_time_end);
+        let time = (pickup_time_end);
+        let timeArray = time.split(':');
+        console.log(timeArray);
+        let hours = (timeArray[0]);
+        console.log(hours);
+        let minutes = (timeArray[1]);
+        console.log(minutes);
+        let timeValue = ("");
+        if(hours > 0 && hours < 12){
+            timeValue = ("" + hours);
+        } else if (hours > 12){
+            timeValue = (hours -12);
+        } else if (hours === 0){
+            timeValue = "12"
+            
+        }
+        
+        timeValue += (minutes < 10) ? ":" + minutes : ":" + minutes;
+        timeValue += (hours >= 12) ? "pm" : "";
+        console.log(timeValue);
+        console.log(pickup_time_end);
+        return(timeValue);
+    };
 
     handleFormSubmit = event => {
         // console.log("handleFormSubmit hit")
@@ -79,7 +122,7 @@ class MyBounty extends Component {
                 pickup_time_end: this.state.pickup_time_end,
                 street_address: this.state.street_address,
                 city: this.state.city,
-                state: this.state.state_ab,
+                state_ab: this.state.state_ab,
                 comments: this.state.comments
 
             })
@@ -106,9 +149,10 @@ class MyBounty extends Component {
                         </CardImg>
                         <CardBody>
                             <CardTitle className="card-title">{my_bounty.crop}</CardTitle>
-                            <CardText className="card-text">{my_bounty.date_available}</CardText>
-                            <CardText className="card-text">From: {my_bounty.pickup_time_start}, Until: {my_bounty.pickup_time_end}</CardText>
-                            <CardText>Additional Comments:{my_bounty.comments}</CardText>
+                            <CardText className="card-text">Available on: {dateFns.format(new Date(my_bounty.date_available),'dddd, MM/DD/YYYY')}</CardText>
+                            <CardText className="card-text">From: {this.convertStartTime(my_bounty.pickup_time_start)}, Until: {this.convertEndTime(my_bounty.pickup_time_end)}</CardText>
+                            <CardText>Address: {my_bounty.street_address}</CardText>
+                            <CardText>{my_bounty.city} {my_bounty.state_ab}</CardText>
                             <DeleteBtn className="delete-button" onClick={() => this.deleteBounty(my_bounty._id)}/>
                         </CardBody>
                     </Card>
@@ -149,10 +193,11 @@ class MyBounty extends Component {
             <FormText>Please create a user name that will be associated with your crops.</FormText> */}
        
                 <Label  for="exampleSelect">Category of Harvest</Label>
-                    <Input
+                
+                    <Input 
                         value={this.state.crop}
                         onChange={this.handleInputChange} 
-                        type="select" name="crop" id="exampleSelect">
+                        type="select" name="crop" id="cropSelect">
                         <option>Select One</option>
                         <option>Apples</option>
                         <option>Apricot</option>
@@ -215,8 +260,8 @@ class MyBounty extends Component {
                         <option>Watermelon</option>
                         <option>Winter Squash</option>
                         <option>Zucchini</option>
-
                     </Input>
+
                 <Label for="exampleDate">Date</Label>
                     <Input 
                         value={this.state.date_available}
@@ -239,7 +284,7 @@ class MyBounty extends Component {
                     <Input
                         value={this.state.street_address}
                         onChange={this.handleInputChange}
-                        type="input" name="address" id="streetAddress" placeholder="Street Address" />
+                        type="input" name="street_address" id="streetAddress" placeholder="Street Address" />
                 <Label for="streetAddress"> City </Label>
                     <Input
                         value={this.state.city}
@@ -247,7 +292,7 @@ class MyBounty extends Component {
                         type="input" name="city" id="city" placeholder="City" />
                 <Label for="stateSelect"> State </Label>
                     <Input
-                        value={this.state.state}
+                        value={this.state.state_ab}
                         onChange={this.handleInputChange}
                         type="select" name="state_ab" id="stateAb" placeholder="State">
 							<option value>All</option>
