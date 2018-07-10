@@ -24,7 +24,6 @@ class Landing extends Component {
         super(props)
     }
 
-
     render() {
         return (
             <Container fluid className="wrapper">
@@ -40,11 +39,12 @@ class Landing extends Component {
                 <div>
                     <div>
                         {
-                            (isLoggedIn()) ? (<button className="btn btn-danger log" onClick={() => logout()}>You are logged in </button>) : (<button className="btn btn-info log" onClick={() => login()}>Log In</button>)
+                            (isLoggedIn()) ? (<button className="login-button" onClick={() => logout()}>You are logged in </button>) : (<button className="login-button" onClick={() => login()}>Log In</button>)
                         }
                     </div>
                 </div>
             </Container>
+
         );
     }
 }

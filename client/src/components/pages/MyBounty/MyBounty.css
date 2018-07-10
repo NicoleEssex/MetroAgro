@@ -75,3 +75,12 @@ div .popdbinfo{
     top: -13px;
 }
 
+.card {
+    width: 100%;
+}
+
+#cardImage {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+}
