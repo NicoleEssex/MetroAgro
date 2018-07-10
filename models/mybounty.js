@@ -6,6 +6,9 @@ const mybountySchema = new Schema({
   date_available: { type: String, required: true },
   pickup_time_start: {type: String, required: true },
   pickup_time_end: {type: String, required: true},
+  street_address: {type: String, required: true},
+  city: {type: String, required: true},
+  state_ab: {type: String, required: true},
   comments: {type: String, required: false},
   available: {type: Boolean, default: false, required: true},
 });
