@@ -20,7 +20,7 @@ const mybountySeed = [
         pickup_time_end: "8:00pm",
         street_address: "1803 Meadow Drive",
         city: "Cottonwood Heights",
-        state: "UT",
+        state_ab: "UT",
         comments: "Like, 20 lbs of strawberries available. First come, first serve.",
         available: false
     },
@@ -31,7 +31,7 @@ const mybountySeed = [
         pickup_time_end: "10:00pm",
         street_address: "7500 S 2700 E",
         city: "Cottonwood Heights",
-        state: "UT",
+        state_ab: "UT",
         comments: "Buckets of apples",
         available: false
     }

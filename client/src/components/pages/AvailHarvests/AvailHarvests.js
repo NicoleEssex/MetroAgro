@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import WebFont from "webfontloader";
-import {Col, Row, Container, ListGroup, ListGroupItem, Jumbotron, FormGroup, Label, Input, FormFeedback, FormText, Card, CardBody, CardImg, CardText, CardTitle} from "reactstrap";
+import {Col, Row, Container, ListGroup, Jumbotron, Card, CardBody, CardImg, CardText, CardTitle, Tooltip} from "reactstrap";
 import API from "../../../utils/API";
 // import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../../components/Grid";
@@ -8,7 +8,9 @@ import API from "../../../utils/API";
 import HomeButton from "../../buttons/HomeButton"
 import imagesObject from "../../ImagesObject/ImagesObject";
 import "./AvailHarvests.css"
-import moment from "moment"; 
+import dateFns from "date-fns";
+
+
 // import {Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';
 WebFont.load({
     google: {
@@ -23,7 +25,10 @@ class AvailHarvests extends Component {
         date_available: "",
         pickup_time_start: "",
         pickup_time_end:"",
-        comment:""
+        street_address:"",
+        city:"",
+        state:"",
+        comments:""
       };
 
       componentDidMount() {
@@ -33,11 +38,12 @@ class AvailHarvests extends Component {
     loadMyBounty = () => {
         API.getMyBounty()
           .then(res =>
-            this.setState({ my_bounty: res.data, crop: "", date_available: "", pickup_time_start:"", pickup_time_end: "", comment:"" })
+            this.setState({ my_bounty: res.data, crop: "", date_available: "", pickup_time_start:"", pickup_time_end: "", street_address:"", city:"", state:"",comments:""})
           )
           .catch(err => console.log(err));
       };
-
+      
+ 
   render() {
     return (
         <div className="containerwrap">
@@ -75,7 +81,6 @@ class AvailHarvests extends Component {
         {/* end of Border - top */}
         {/* Data base will populate within Jumbotron div below subtitle */}
         <Jumbotron id = "dbPopAh">
-            <h4 className = "subtitle">Please select the crop you're interested in to get more details about where and when you can pick it up. </h4>
             <div className = "dbPopulate">
             {this.state.my_bounty.length ? (
               <ListGroup >
@@ -85,10 +90,10 @@ class AvailHarvests extends Component {
                   </CardImg>
                   <CardBody>
                       <CardTitle className="card-title">{my_bounty.crop}</CardTitle>
-                      <CardText className="card-text">{my_bounty.date_available}</CardText>
+                      <CardText className="card-text">Available on: {dateFns.format(new Date(my_bounty.date_available),'dddd, MM/DD/YYYY')}</CardText>
                       <CardText className="card-text">From: {my_bounty.pickup_time_start}, Until: {my_bounty.pickup_time_end}</CardText>
-                      <CardText>Additional Comments:{my_bounty.comments}</CardText>
-                      {/* <DeleteBtn className="delete-button" onClick={() => this.deleteMyBounty(my_bounty._id)}/> */}
+                      <CardText>Address: {my_bounty.street_address}</CardText>
+                      <CardText>{my_bounty.city}, {my_bounty.state_ab}</CardText>
                   </CardBody>
               </Card>
               ))}

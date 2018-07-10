@@ -64,6 +64,10 @@ div.imageAlign {
 
 }
 
+h5.card-title {
+    text-align: center;
+}
+
 .subtitle {
     font-family: 'Roboto Condensed', 'sans-serif';
     color: white;
@@ -71,9 +75,13 @@ div.imageAlign {
     border-bottom: 2px white solid;
 }
 
+p.card-text {
+    font-size: 16px;
+}
+
 div#dbPopAh.jumbotron {
     background-color:#6c4967;
     opacity: .9;
     margin: 0px;
-    height: 500px;
+    height: auto;
 }
