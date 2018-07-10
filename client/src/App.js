@@ -14,6 +14,9 @@ import "./components/cards/CardComponent.css";
 // import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
+import Callback from './Callback/Callback';
+import { requireAuth } from './utils/AuthService';
+
 // import auth0 from "auth0-js";
 
 // *******************
@@ -21,13 +24,6 @@ import history from './history';
 // *******************
 
 
-const auth = new Auth();
-
-const handleAuthentication = ({location}) => {
-  if (/access_token|id_token|error/.test(location.hash)) {
-    auth.handleAuthentication();
-  }
-}
 
 class App extends Component {
 constructor(props){
@@ -39,34 +35,24 @@ componentDidMount=()=>{
   this.setState({})
 }
 
-login() {
-  auth.login()
-}
-storeAuth = (object) => {
-  if(!this.state.access_token){
-  this.setState(object);
 
-  }
-  console.log(this.state);
-}
 changeAppState = (name, value) => {
   this.setState({[name]:value})
 }
   render() {
-    // const { isAuthenticated } = this.props.auth;
     return (
       
       
         <Router  history={history}>
 
           <Switch>
-            <Route exact path="/" component={() => <Landing auth={auth}  login={this.login}  />} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/cards" component={CardComponent} />
-            <Route exact path="/mybounty" component={MyBounty} />
-            <Route exact path="/availharvests" component={AvailHarvests} />
-            <Route exact path="/createuser" component={CreateUser} />
-            <Route path = "/callback" component={()=><Home state={this.state} storeAuth={this.storeAuth}/>} />
+            <Route exact path="/" component={Landing}  />} />
+            <Route exact path="/home" component={Home} onEnter={requireAuth}/>
+            {/* <Route exact path="/cards" component={CardComponent} onEnter={requireAuth}/> */}
+            <Route exact path="/mybounty" component={MyBounty} onEnter={requireAuth}/>
+            <Route exact path="/availharvests" component={AvailHarvests} onEnter={requireAuth}/>
+            <Route exact path="/createuser" component={CreateUser} onEnter={requireAuth}/>
+            <Route path = "/callback" component={Callback} />
           </Switch>
 
         </Router>
