@@ -1,20 +1,27 @@
 import axios from "axios";
+import { getAccessToken } from './AuthService';
+
+
+const BASE_URL = 'http://localhost:3333';
 
 export default {
     //gets all crops
-    getMyBounty: () => {
-        return axios.get("/api/mybounty");
+    getMyBounty() {
+        const url = `${BASE_URL}/api/mybounty`;
+        return axios.get(url, { headers: { Authorization: `Bearer ${getAccessToken()}` }}).then(response => response.data);
     },
     //deletes crops (to be called in a delete button) little red "x" maybe? 
-    deleteMyBounty: (id) => {
-        console.log("hitting me with something here");
-        return axios.delete("/api/mybounty/" + id);
+    deleteMyBounty(id){
+        const url = `${BASE_URL}/api/mybounty/${id}`;
+        return axios.delete(url, { headers: { Authorization: `Bearer ${getAccessToken()}` }}).then(response => response.data);
     },
     saveMyBounty: function(my_bountyData) {
-        console.log("util api hit")
-        return axios.post("/api/mybounty", my_bountyData);
+        const url = `${BASE_URL}/api/mybounty`;
+        return axios.post(url, { headers: { Authorization: `Bearer ${getAccessToken()}` }}).then(response => response.data);
       }
     };
+
+// stop it
 
 
 // import axios from "axios";
