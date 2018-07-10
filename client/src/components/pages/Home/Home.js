@@ -3,6 +3,8 @@ import WebFont from "webfontloader";
 import { Col, Row, Container } from "reactstrap";
 import "./Home.css";
 import queryString from "query-string";
+import { login, logout, isLoggedIn } from '../../../utils/AuthService.js';
+
 // import { Link } from "react-router-dom";
 // import API from "./utils/API.js";
 // import { Link } from "react-router-dom";
@@ -26,6 +28,13 @@ export default class Home extends React.Component {
     return (
       <Container id="homebkg">
         {this.props.test}
+        <Row>
+          <div>
+            {
+              (isLoggedIn()) ? (<button className="btn btn-danger log" onClick={() => logout()}>Log Out</button>) : (<button className="btn btn-info log" onClick={() => login()}>Log In</button>)
+            }
+          </div>
+        </Row>
         <Row>
           <Col className="app-title">
             <h1>MetroAgro</h1>

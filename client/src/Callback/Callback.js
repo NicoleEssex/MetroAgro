@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
+import { setIdToken, setAccessToken } from '../utils/AuthService';
 import loading from './loading.svg';
 
 class Callback extends Component {
+  constructor() {
+    super()
+  }
+
+  componentDidMount() {
+    setAccessToken();
+    setIdToken();
+    window.location.href = "/home";
+  }
   render() {
     const style = {
       position: 'absolute',
@@ -25,3 +35,4 @@ class Callback extends Component {
 }
 
 export default Callback;
+
