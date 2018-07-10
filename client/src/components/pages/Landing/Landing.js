@@ -10,8 +10,8 @@ import Carousel from "./../../Carousel/Carousel.js"
 // import { Col, Row, Container } from "../../components/Grid";
 // import { List, ListItem } from "../../components/List";
 // import { Input, TextArea, FormBtn } from "../../components/Form";
-import {Container} from "reactstrap";
-
+import { Container } from "reactstrap";
+import { login, logout, isLoggedIn } from '../../../utils/AuthService.js';
 
 WebFont.load({
     google: {
@@ -20,30 +20,31 @@ WebFont.load({
 })
 
 class Landing extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
     }
-    loginTest = () =>{
-        this.props.login("test","your Face")
-    }
 
-  render() {
-    return (
-        <Container fluid className = "wrapper">
-        
-        {/* {this.props.test} */}
-            <p className = "titles">MetroAgro {this.props.name}</p>
-            <br/>
-            <Carousel/>
-            <br/>
-            <br/>
-            <br/>
-            <p className = "intro"> Join our community and enjoy the healthful benefits of your neighborhood grown produce while helping to cutdown on food waste.</p>
-             <div>
-                 <button className="login-button" onClick={this.loginTest}> LOGIN </button>
-                 {/* onClick={this.props.auth.login} */}
-            </div>
-        </Container>
+    render() {
+        return (
+            <Container fluid className="wrapper">
+
+                {/* {this.props.test} */}
+                <p className="titles">MetroAgro {this.props.name}</p>
+                <br />
+                <Carousel />
+                <br />
+                <br />
+                <br />
+                <p className="intro"> Join our community and enjoy the healthful benefits of your neighborhood grown produce while helping to cutdown on food waste.</p>
+                <div>
+                    <div>
+                        {
+                            (isLoggedIn()) ? (<button className="login-button" onClick={() => logout()}>You are logged in </button>) : (<button className="login-button" onClick={() => login()}>Log In</button>)
+                        }
+                    </div>
+                </div>
+            </Container>
+
         );
     }
 }
