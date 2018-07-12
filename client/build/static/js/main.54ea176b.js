@@ -9047,7 +9047,7 @@ var UncontrolledTooltip = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router__ = __webpack_require__(356);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_auth0_js__ = __webpack_require__(385);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_auth0_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_auth0_js__);
-var ID_TOKEN_KEY='id_token';var ACCESS_TOKEN_KEY='access_token';var CLIENT_ID='rq_IMexCwKdEc9vdpoRN5YGZ8yo_1SNq';var CLIENT_DOMAIN='metro-agro.auth0.com';var REDIRECT=window.location.href='/callback';var SCOPE='YOUR_SCOPE';var AUDIENCE='https://metro-agrov2.com';// test code
+var ID_TOKEN_KEY='id_token';var ACCESS_TOKEN_KEY='access_token';var CLIENT_ID='rq_IMexCwKdEc9vdpoRN5YGZ8yo_1SNq';var CLIENT_DOMAIN='metro-agro.auth0.com';var REDIRECT="https://secure-retreat-41621.herokuapp.com/callback";var SCOPE='YOUR_SCOPE';var AUDIENCE='https://metro-agrov2.com';// test code
 var auth=new __WEBPACK_IMPORTED_MODULE_2_auth0_js___default.a.WebAuth({clientID:CLIENT_ID,domain:CLIENT_DOMAIN});function login(){auth.authorize({responseType:'token id_token',redirectUri:REDIRECT,audience:AUDIENCE,scope:SCOPE});}function logout(){clearIdToken();clearAccessToken();__WEBPACK_IMPORTED_MODULE_1_react_router__["a" /* browserHistory */].push('/');window.location.href="/";}function requireAuth(nextState,replace){if(!isLoggedIn()){replace({pathname:'/'});}}function getIdToken(){return localStorage.getItem(ID_TOKEN_KEY);}function getAccessToken(){return localStorage.getItem(ACCESS_TOKEN_KEY);}function clearIdToken(){localStorage.removeItem(ID_TOKEN_KEY);}function clearAccessToken(){localStorage.removeItem(ACCESS_TOKEN_KEY);}// Helper function that will allow us to extract the access_token and id_token
 function getParameterByName(name){var match=RegExp('[#&]'+name+'=([^&]*)').exec(window.location.hash);return match&&decodeURIComponent(match[1].replace(/\+/g,' '));}// Get and store access_token in local storage
 function setAccessToken(){var accessToken=getParameterByName('access_token');localStorage.setItem(ACCESS_TOKEN_KEY,accessToken);}// Get and store id_token in local storage
@@ -61610,4 +61610,4 @@ module.exports = __webpack_require__.p + "static/media/loading.c5590569.svg";
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.fd83537f.js.map
+//# sourceMappingURL=main.54ea176b.js.map
