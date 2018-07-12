@@ -11,7 +11,7 @@ import Carousel from "./../../Carousel/Carousel.js"
 // import { List, ListItem } from "../../components/List";
 // import { Input, TextArea, FormBtn } from "../../components/Form";
 import { Container } from "reactstrap";
-import { login, logout, isLoggedIn } from '../../../utils/AuthService.js';
+import { login, logout, isLoggedIn, REDIRECT } from '../../../utils/AuthService.js';
 
 WebFont.load({
     google: {
@@ -25,6 +25,7 @@ class Landing extends Component {
     }
 
     render() {
+        console.log(REDIRECT);
         return (
             <Container fluid className="wrapper">
 

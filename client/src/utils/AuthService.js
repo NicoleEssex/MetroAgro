@@ -6,10 +6,10 @@ const ACCESS_TOKEN_KEY = 'access_token';
 
 const CLIENT_ID = 'rq_IMexCwKdEc9vdpoRN5YGZ8yo_1SNq';
 const CLIENT_DOMAIN = 'metro-agro.auth0.com';
-const REDIRECT = window.location;
+const REDIRECT = window.location.href;
 const SCOPE = 'YOUR_SCOPE';
 const AUDIENCE = 'https://metro-agrov2.com';
-
+export {REDIRECT};
 var auth = new auth0.WebAuth({
   clientID: CLIENT_ID,
   domain: CLIENT_DOMAIN
