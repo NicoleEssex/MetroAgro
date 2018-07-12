@@ -11,7 +11,11 @@ import Carousel from "./../../Carousel/Carousel.js"
 // import { List, ListItem } from "../../components/List";
 // import { Input, TextArea, FormBtn } from "../../components/Form";
 import { Container } from "reactstrap";
-import { login, logout, isLoggedIn } from '../../../utils/AuthService.js';
+
+//==========================================================================================================
+// Auth crap that can be deleted
+//==========================================================================================================
+// import { login, logout, isLoggedIn } from '../../../utils/AuthService.js';
 
 WebFont.load({
     google: {
@@ -39,7 +43,7 @@ class Landing extends Component {
                 <div>
                     <div>
                         {
-                            (isLoggedIn()) ? (<button className="login-button" onClick={() => logout()}>You are logged in </button>) : (<button className="login-button" onClick={() => login()}>Log In</button>)
+                        <button className="login-button">Login</button>
                         }
                     </div>
                 </div>

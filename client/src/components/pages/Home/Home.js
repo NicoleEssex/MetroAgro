@@ -3,7 +3,10 @@ import WebFont from "webfontloader";
 import { Col, Row, Container } from "reactstrap";
 import "./Home.css";
 import queryString from "query-string";
-import { login, logout, isLoggedIn } from '../../../utils/AuthService.js';
+//==========================================================================================================
+// Auth crap that can be deleted
+//==========================================================================================================
+// import { login, logout, isLoggedIn } from '../../../utils/AuthService.js';
 
 // import { Link } from "react-router-dom";
 // import API from "./utils/API.js";
@@ -21,20 +24,19 @@ export default class Home extends React.Component {
     super(props);
   }
   componentDidMount() {
-    let authResp = queryString.parse(window.location.hash);
+    //==========================================================================================================
+    // Auth crap that can be deleted
+    //==========================================================================================================
+    // let authResp = queryString.parse(window.location.hash);
+
+
     // this.props.storeAuth(authResp);
   }
   render() {
     return (
       <Container id="homebkg">
         {this.props.test}
-        <Row>
-          <div>
-            {
-              (isLoggedIn()) ? (<button className="btn btn-danger log" onClick={() => logout()}>Log Out</button>) : (<button className="btn btn-info log" onClick={() => login()}>Log In</button>)
-            }
-          </div>
-        </Row>
+
         <Row>
           <Col className="app-title">
             <h1>MetroAgro</h1>

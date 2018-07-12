@@ -11,11 +11,8 @@ import CardComponent from "./components/cards/CardComponent";
 // import {Container} from "reactstrap";
 import "./App.css";
 import "./components/cards/CardComponent.css";
-// import Callback from './Callback/Callback';
-import Auth from './Auth/Auth';
 import history from './history';
-import Callback from './Callback/Callback';
-import { requireAuth } from './utils/AuthService';
+
 
 // import auth0 from "auth0-js";
 
@@ -47,12 +44,11 @@ changeAppState = (name, value) => {
 
           <Switch>
             <Route exact path="/" component={Landing}  />} />
-            <Route exact path="/home" component={Home} onEnter={requireAuth}/>
-            {/* <Route exact path="/cards" component={CardComponent} onEnter={requireAuth}/> */}
-            <Route exact path="/mybounty" component={MyBounty} onEnter={requireAuth}/>
-            <Route exact path="/availharvests" component={AvailHarvests} onEnter={requireAuth}/>
-            <Route exact path="/createuser" component={CreateUser} onEnter={requireAuth}/>
-            <Route path = "/callback" component={Callback} />
+            <Route exact path="/home" component={Home} />
+            {/* <Route exact path="/cards" component={CardComponent} /> */}
+            <Route exact path="/mybounty" component={MyBounty} />
+            <Route exact path="/availharvests" component={AvailHarvests} />
+            <Route exact path="/createuser" component={CreateUser} />
           </Switch>
 
         </Router>
