@@ -9,6 +9,7 @@ const CLIENT_DOMAIN = 'metro-agro.auth0.com';
 const REDIRECT = window.location.href;
 const SCOPE = 'YOUR_SCOPE';
 const AUDIENCE = 'https://metro-agrov2.com';
+// test code
 export {REDIRECT};
 var auth = new auth0.WebAuth({
   clientID: CLIENT_ID,
