@@ -29,9 +29,9 @@ router.route("/")
 
 // Matches with "/api/mybounty/:id"
 router.route("/:id")
-  .get(authCheck, mybountyCountroller.findById)
-  .put(authCheck, mybountyCountroller.update)
-  .delete(authCheck, mybountyCountroller.remove);
+  .get( mybountyCountroller.findById)
+  .put( mybountyCountroller.update)
+  .delete( mybountyCountroller.remove);
 
 // //Matches with "api/harvest/:item"
 // router 
