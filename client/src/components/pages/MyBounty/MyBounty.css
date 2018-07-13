@@ -1,14 +1,17 @@
 
 
-.myBountyContainer {
-    padding: 20px;
+.jumbotron.myBountyContainer {
+    padding: 0;
     background-color: #d2cfa6;
     opacity: .9;
-    max-width: 500px;
-    text-align: center;
+    max-width: 969px;
+    text-align: left;
     margin-right:auto;
     margin-left:auto;
-    margin-top:20px;   
+    margin-top:20px;
+    border: 5px solid white;
+
+       
 }
 
 .mbFormGroup {
@@ -16,7 +19,7 @@
     opacity: .9;
     font-family:'Roboto Condensed', 'sans-serif';
     color:white;
-    max-width: 500px;
+    max-width: 969px;
     margin-right:auto;
     margin-left:auto;
     padding-top: 10px;
@@ -31,30 +34,36 @@
     margin-top: 0px;
     padding-top: 0px;
     font-weight: 100;
-    color: #6c4967;
+    /* color: #6c4967; */
     font-family: 'Indie Flower', 'cursive';
-    font-size: 40px;
+    font-size: 60px;
+    text-align: center;
+    color: black;
+    
+
 }
 
-div .popdbinfo{
+div.popdbinfo{
     height: auto;
     width: auto;
-    background-color: #67ab23;   
+    padding: 20px;
+   
+    /* background-color: #67ab23; */
+       
 }
 
  #mb-main-container {
     background-image: url(vegbask2\ copy.jpg);
     margin-right: auto;
     margin-left: auto;
-    max-width: 600px;
+
     height: 400%;
-    margin-top: 20px;
 
 }
 
 .form-check-label {
     margin-right: 12px;
-    font-size: 23px;
+    font-size: 35px;
     margin-bottom: 8px;
     position: relative;
 }
@@ -72,11 +81,13 @@ div .popdbinfo{
 #checkbox {
     margin-bottom:50px;
     position: absolute;
-    top: -13px;
+    top: -17px;
 }
 
 .card {
     width: 100%;
+    min-height:500px;
+    margin-bottom: 25px;
 }
 
 #cardImage {
@@ -84,4 +95,33 @@ div .popdbinfo{
     margin-right: 0px;
     width: 100%;
 }
+label {
+    font-size: 20px;
+}
 
+span {
+    font-size: 20px;
+}
+
+input.form-control {
+    font-size: 16px;
+}
+
+#cropSelect,
+#stateAb {
+    font-size: 15px;
+}
+/* div btn#addCrop.afcb.btn.btn-default{
+    font-size: 16px !important;
+} */
+
+.delete-button {
+    text-align: right;
+    margin-right: 3px;
+}
+.button#addcrop {
+    font-size: 20px;
+}
+.btn{
+    font-size: 16px !important;
+}

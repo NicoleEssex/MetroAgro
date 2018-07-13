@@ -28,16 +28,21 @@ export default class Home extends React.Component {
     return (
       <Container id="homebkg">
         {this.props.test}
+        {/* <Row>
+          
+        </Row> */}
         <Row>
+          <Col xs="3">
           <div>
             {
-              (isLoggedIn()) ? (<button className="btn btn-danger log" onClick={() => logout()}>Log Out</button>) : (<button className="btn btn-info log" onClick={() => login()}>Log In</button>)
+              (isLoggedIn()) ? (<button id="inAndoutBtn" className="btn btn-danger log" onClick={() => logout()}>Log Out</button>) : (<button in="indAndoutBtn" className="btn btn-info log" onClick={() => login()}>Log In</button>)
             }
           </div>
-        </Row>
-        <Row>
-          <Col className="app-title">
+          </Col>
+          <Col xs="6" className="app-title">
             <h1>MetroAgro</h1>
+          </Col>
+          <Col xs="3">
           </Col>
         </Row>
         <Row>

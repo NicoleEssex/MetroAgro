@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ListGroup, Jumbotron,FormGroup, Label, Input, Card, CardBody, CardImg, CardText, CardTitle} from "reactstrap";
+import { ListGroup, Jumbotron,FormGroup, Label, Input, Card, CardBody, CardImg, CardText, CardTitle, Container, Row, Col} from "reactstrap";
 import WebFont from "webfontloader";
 import HomeButton from "../../buttons/HomeButton/";
 // import HarvestModal from "../../Modal/HarvestModal";
@@ -74,12 +74,12 @@ class MyBounty extends Component {
         } else if (hours > 12){
             timeValue = (hours -12);
         } else if (hours === 0){
-            timeValue = "12"
+            timeValue = "12";
             
         }
         
         timeValue += (minutes < 10) ? ":" + minutes : ":" + minutes;
-        timeValue += (hours >= 12) ? "pm" : "";
+        timeValue += (hours >= 12) ? "pm" : "am";
         console.log(timeValue);
         console.log(pickup_time_start);
         return(timeValue);
@@ -104,7 +104,7 @@ class MyBounty extends Component {
         }
         
         timeValue += (minutes < 10) ? ":" + minutes : ":" + minutes;
-        timeValue += (hours >= 12) ? "pm" : "";
+        timeValue += (hours >= 12) ? "pm" : "am";
         console.log(timeValue);
         console.log(pickup_time_end);
         return(timeValue);
@@ -140,28 +140,39 @@ class MyBounty extends Component {
 
                 <Jumbotron className="myBountyContainer">
                     <p id="myBountyTitle">Your Crops</p>
+
+                    <Container>
                     <div className="popdbinfo">
                     {this.state.my_bounty.length ? (    
-                    <ListGroup >
+                    <Row>
                     {this.state.my_bounty.map(my_bounty => (
+                        <Col xs="12" sm="6" md="4" >
                     <Card className="card-display" key={my_bounty._id}>
+                    <DeleteBtn className="delete-button" onClick={() => this.deleteBounty(my_bounty._id)}/>
                         <CardImg top width="100%" src={imagesObject[my_bounty.crop.toLowerCase()]}>
                         </CardImg>
                         <CardBody>
+                        
                             <CardTitle className="card-title">{my_bounty.crop}</CardTitle>
-                            <CardText className="card-text">Available on: {dateFns.format(new Date(my_bounty.date_available),'dddd, MM/DD/YYYY')}</CardText>
-                            <CardText className="card-text">From: {this.convertStartTime(my_bounty.pickup_time_start)}, Until: {this.convertEndTime(my_bounty.pickup_time_end)}</CardText>
-                            <CardText>Address: {my_bounty.street_address}</CardText>
+                            <CardText className="card-text"><strong>Available on:</strong> {dateFns.format(new Date(my_bounty.date_available),'dddd, MM/DD/YYYY')}</CardText>
+                            <CardText className="card-text"><strong>From:</strong>{this.convertStartTime(my_bounty.pickup_time_start)}<strong>, Until:</strong> {this.convertEndTime(my_bounty.pickup_time_end)}</CardText>
+                            <CardText><strong>Address: </strong>{my_bounty.street_address}</CardText>
                             <CardText>{my_bounty.city} {my_bounty.state_ab}</CardText>
-                            <DeleteBtn className="delete-button" onClick={() => this.deleteBounty(my_bounty._id)}/>
+                            <CardText><strong>Comments:</strong> {my_bounty.comments}</CardText>
+                            
                         </CardBody>
                     </Card>
+                    </Col>
                     ))}
-                    </ListGroup>
+                    
+                    </Row>
                 ) : (
                     <h3>No Results to Display</h3>
                   )}
-                      </div>
+                  </div>
+                  
+                        </Container>
+        
                   </Jumbotron>    
               
               {/* <ListGroup>

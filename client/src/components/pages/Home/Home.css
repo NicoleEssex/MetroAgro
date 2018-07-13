@@ -2,7 +2,7 @@
 
 div .container #homebkg{
     background-color:#ced2bc;
-    max-width: 600px;
+    max-width: 960px;
     align-content: center;
     margin-right: 0px;
     margin-left: 0px;
@@ -16,12 +16,17 @@ color:#ffffff;
 opacity: 50%;
 }
 
+#inAndOutBtn {
+    margin: 5px;
+}
+
 .app-title h1{
     text-align: center;
     padding: 10px;
     margin: 10px auto;
     font-family: 'Indie Flower', cursive;
-    font-size: 40pt;
+    font-size: 45pt;
+    margin-top: 20px;
 }
 
 #availHarvImg {
@@ -43,11 +48,12 @@ opacity: 50%;
 }
 div .image-container {
     margin:0px auto;
-    max-width: 500px;
+    max-width: 960px;
     background-color: #40251a;
     margin-bottom: 10px;
     padding: 10px;
     position: relative;
+    opacity: .9;
 
 }
 .pageContainer {
@@ -76,5 +82,17 @@ col {
     top:12px;
     color: #d5290d
 
+}
+
+button.btn.btn-info.log {
+    padding: 10px;
+    width: 55px;
+    height: 55px;
+    font-size: 16px !important;
+    font-family: 'Indie Flower', cursive;
+    margin-top: 9px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 20px #777777
+    
 }
   

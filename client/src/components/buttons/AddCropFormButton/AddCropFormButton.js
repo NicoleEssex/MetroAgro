@@ -9,7 +9,7 @@ import "./AddCropFormButton.css"
 
 const AddCropFormButton = (props) => (
   <div>
-        <Button className="acfb" type="submit" onClick={props.handleFormSubmit}>Add a Crop</Button>
+        <Button id="addCrop" className="acfb" type="submit" onClick={props.handleFormSubmit}>Add a Crop</Button>
   </div>
 );
 
