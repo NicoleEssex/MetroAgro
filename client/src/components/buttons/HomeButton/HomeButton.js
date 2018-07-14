@@ -12,11 +12,11 @@ const HomeButton = () => (
                 <Glyphicon glyph="home" />
             </Button>
         </Link>
-        <div>
+        <span>
             {
                 (isLoggedIn()) ? (<button className="btn btn-danger log" onClick={() => logout()}>Log Out</button>) : (<button className="btn btn-info log" onClick={() => login()}>Log In</button>)
             }
-        </div>
+        </span>
     </div>
 );
 

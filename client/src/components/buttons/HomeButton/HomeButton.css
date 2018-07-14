@@ -2,9 +2,31 @@ button {
     height: 55px;
     width: 55px;
     padding:5px;
+    border-radius: 5px;
+    margin-right:15px !important;
+    
      
 }
 glyphicon {
     height: 60px;
     width: 60px;
+}
+
+
+button.btn.btn-info.log {
+    margin-top: 4px;
+    border-radius: 2px;
+    background-color: #67ab23;
+    margin-left: 1px;
+    margin-bottom: 2px;
+    border:0;
+}
+
+button.btn.btn-danger log {
+    margin-top: 4px;
+    margin-left: 1px;
+    border-radius: 2px;
+    background-color: #d5290d;
+    margin-bottom: 2px;
+    border: 0;
 }

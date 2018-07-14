@@ -1,12 +1,22 @@
 .containerwrap {
-    max-width: 500px;
-    margin-right:auto;
-    margin-left:auto;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container {
+    padding: 0;
+    margin: 0;
 }
 #vegibaskah {
-    width: 100%;
-    height: 100%;
+    width: 67.5px;
+    height: 50px;
+}
 
+#imageBox {
+    width: 100%px;
+    height: 100%px;
+    background-color:  #559984;
 }
 
 .borders {
@@ -15,15 +25,22 @@
     opacity: .7;
 }
 
-h1#pageTitle {
+.border-wrapper {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+p#pageTitle {
     font-family: 'Indie Flower', 'cursive';
     margin-top: 15px;
+    font-size: 45px;
+
     
 }
 div#Color1 {
     box-sizing: border-box;
     Width: 100%;
-    Height:75px;
+   
     background-color: #d5290d;
     padding: 0px;
     margin: 0px;
@@ -32,7 +49,7 @@ div#Color1 {
 div#Color2 {
     box-sizing: border-box;
     Width: 100%;
-    Height: 75px;
+   
     background-color: #fdc021;
     padding: 0px;
     margin: 0px;
@@ -43,8 +60,8 @@ div#Color2 {
 div#Color3 {
     box-sizing: border-box;
     Width: 100%;
-    Height:75px;
-    background-color:#67ab23 ;
+   
+    background-color:#6c4967 ;
     padding: 0px;
     margin: 0px;
 }
@@ -52,15 +69,19 @@ div.imageAlign {
     text-align: center;
     padding:0px;
     margin: 0px;
+    width:100%;
+    height:50px;
 }
 
 #titleCol {
     padding-right: 0px;
+    text-align: center;
 }
 
 #homeBtnCol {
-    padding-left: 0px;
+    padding-left: 15px;
     margin-left: 0px;
+    margin-right: 3px;
 
 }
 
@@ -80,8 +101,10 @@ p.card-text {
 }
 
 div#dbPopAh.jumbotron {
-    background-color:#6c4967;
-    opacity: .9;
-    margin: 0px;
+    background-color:#559984;
+    opacity: .7;
+    margin: 0px auto;
     height: auto;
+    
+
 }
