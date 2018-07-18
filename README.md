@@ -11,5 +11,9 @@ MetroAgro
 5) gardening tips for fruits and vegetables you can grow in your area
   Below are screenshots for each page and available features to date.
   
+  ![screen shot 2018-07-13 at 11 35 17 am](https://user-images.githubusercontent.com/34261127/42913199-cc4f670c-8ab0-11e8-9a3d-f862ccdcad6f.png)
+![screen shot 2018-07-13 at 11 43 10 am](https://user-images.githubusercontent.com/34261127/42913203-d53a0f0c-8ab0-11e8-83aa-9d49e5940005.png)
+![screen shot 2018-07-13 at 11 37 34 am](https://user-images.githubusercontent.com/34261127/42913204-d791b2f0-8ab0-11e8-87a1-7b26c30b15fa.png)
+
 
 
