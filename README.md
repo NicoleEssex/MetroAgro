@@ -9,6 +9,7 @@ MetroAgro
 3) community blog
 4) recipes that use the fresh produce you search for
 5) gardening tips for fruits and vegetables you can grow in your area
+  
   Below are screenshots for each page and available features to date.
   
   ![screen shot 2018-07-13 at 11 35 17 am](https://user-images.githubusercontent.com/34261127/42913199-cc4f670c-8ab0-11e8-9a3d-f862ccdcad6f.png)
